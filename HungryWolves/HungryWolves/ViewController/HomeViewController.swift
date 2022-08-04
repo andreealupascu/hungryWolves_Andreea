@@ -44,8 +44,8 @@ extension HomeViewController {
         var widthScreenPercent = 0.53
         
         if screenSize.width <= 400 {
-            heightScreenPercent = 0.40
-            widthScreenPercent = 0.50
+            heightScreenPercent = 0.4
+            widthScreenPercent = 0.5
         }
         
         let item = NSCollectionLayoutItem(
@@ -139,13 +139,13 @@ extension HomeViewController {
             categoryCell.updateCategoriesCell(with: category)
             
             if indexPath.section == 0 && indexPath.row == 0 && isFirstLoad == true {
-                categoryCell.categoryLabelText.textColor = UIColor(red: 250 / 255, green: 74 / 255, blue: 12 / 255, alpha: 1)
-                categoryCell.lineImageView.backgroundColor = UIColor(red: 250 / 255, green: 74 / 255, blue: 12 / 255, alpha: 1)
+                categoryCell.categoryLabelText.textColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
+                categoryCell.lineImageView.backgroundColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
                 categoryCell.isSelected = true
                 isFirstLoad = false
             } else {
-                categoryCell.categoryLabelText.textColor = UIColor(red: 154 / 255, green: 154 / 255, blue: 157 / 255, alpha: 1)
-                categoryCell.lineImageView.backgroundColor  = UIColor(red: 229 / 255, green: 229 / 255, blue: 229 / 255, alpha: 1)
+                categoryCell.categoryLabelText.textColor = UIColor(red: 154, green: 154, blue: 157, a: 1)
+                categoryCell.lineImageView.backgroundColor  = UIColor(red: 229, green: 229, blue: 229, a: 1)
                 categoryCell.isSelected = false
             }
             return categoryCell
@@ -161,10 +161,8 @@ extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
             if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell {
-                //cell.prepareForReuse()
-                cell.categoryLabelText.textColor = UIColor(red: 250 / 255, green: 74 / 255, blue: 12 / 255, alpha: 1)
-                cell.lineImageView.backgroundColor = UIColor(red: 250 / 255, green: 74 / 255, blue: 12 / 255, alpha: 1)
-                
+                cell.categoryLabelText.textColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
+                cell.lineImageView.backgroundColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
                 self.homeViewModel.categorySelected(categoryType: cell.categoryLabelText.text ?? "" )
             }
         }
@@ -173,18 +171,10 @@ extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
             if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell {
-                cell.categoryLabelText.textColor = UIColor(red: 154 / 255, green: 154 / 255, blue: 157 / 255, alpha: 1)
-                cell.lineImageView.backgroundColor  = UIColor(red: 229 / 255, green: 229 / 255, blue: 229 / 255, alpha: 1)
+                cell.categoryLabelText.textColor = UIColor(red: 154, green: 154, blue: 157, a: 1)
+                cell.lineImageView.backgroundColor  = UIColor(red: 229, green: 229, blue: 229, a: 1)
             }
         }
     }
     
-}
-
-extension UICollectionView {
-    
-    func deselectAllItems(animated: Bool) {
-        guard let selectedItems = indexPathsForSelectedItems else { return }
-        for indexPath in selectedItems { deselectItem(at: indexPath, animated: animated) }
-    }
 }

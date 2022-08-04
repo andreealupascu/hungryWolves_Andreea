@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1428B45289BD89200D03496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1428B44289BD89200D03496 /* Constants.swift */; };
+		C167F723289A8D7F00753740 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C167F722289A8D7F00753740 /* SearchViewModel.swift */; };
+		C167F725289AACDC00753740 /* extensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C167F724289AACDC00753740 /* extensionUIColor.swift */; };
 		C1795BEF2897F3EC004EC6EE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1795BEE2897F3EC004EC6EE /* SearchViewController.swift */; };
 		C1795BF12898489C004EC6EE /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1795BF02898489C004EC6EE /* SearchCollectionViewCell.swift */; };
 		C18C9F292898F22F00540043 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18C9F282898F22F00540043 /* HomeViewModel.swift */; };
@@ -29,6 +32,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C1428B44289BD89200D03496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C167F722289A8D7F00753740 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		C167F724289AACDC00753740 /* extensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionUIColor.swift; sourceTree = "<group>"; };
 		C1795BEE2897F3EC004EC6EE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C1795BF02898489C004EC6EE /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		C18C9F282898F22F00540043 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -98,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C18C9F282898F22F00540043 /* HomeViewModel.swift */,
+				C167F722289A8D7F00753740 /* SearchViewModel.swift */,
 			);
 			name = ViewModel;
 			path = ViewController/ViewModel;
@@ -123,8 +130,10 @@
 			isa = PBXGroup;
 			children = (
 				C1EFEFB128954EBF00CB0A58 /* AppDelegate.swift */,
+				C1428B44289BD89200D03496 /* Constants.swift */,
 				C1EFEFB328954EBF00CB0A58 /* SceneDelegate.swift */,
 				C18C9F2A289938C200540043 /* extensionUIDevice.swift */,
+				C167F724289AACDC00753740 /* extensionUIColor.swift */,
 				C1B060792896CFC200621E84 /* Model */,
 				C1B0607A2896CFE100621E84 /* ViewController */,
 				C1795BF2289848A7004EC6EE /* CollectionViewCells */,
@@ -217,16 +226,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B060712896BFDD00621E84 /* Meals.swift in Sources */,
+				C1428B45289BD89200D03496 /* Constants.swift in Sources */,
 				C18C9F2B289938C200540043 /* extensionUIDevice.swift in Sources */,
 				C1795BEF2897F3EC004EC6EE /* SearchViewController.swift in Sources */,
 				C1795BF12898489C004EC6EE /* SearchCollectionViewCell.swift in Sources */,
 				C1EFEFB628954EBF00CB0A58 /* HomeViewController.swift in Sources */,
 				C1B060742896BFDD00621E84 /* Meal.swift in Sources */,
+				C167F723289A8D7F00753740 /* SearchViewModel.swift in Sources */,
 				C1B060722896BFDD00621E84 /* Categories.swift in Sources */,
 				C1EFEFB228954EBF00CB0A58 /* AppDelegate.swift in Sources */,
 				C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */,
 				C18C9F292898F22F00540043 /* HomeViewModel.swift in Sources */,
 				C1B060782896CDEA00621E84 /* Category.swift in Sources */,
+				C167F725289AACDC00753740 /* extensionUIColor.swift in Sources */,
 				C1B0607D2896E0B600621E84 /* CategoryCollectionViewCell.swift in Sources */,
 				C1B060732896BFDD00621E84 /* Protocols.swift in Sources */,
 				C1EFEFB428954EBF00CB0A58 /* SceneDelegate.swift in Sources */,
