@@ -24,11 +24,10 @@ class HomeViewModel {
     
     init() {
         self.fetchCategories()
-        //self.fetchMeal(categoryType: categoriesServer[0].name )
     }
     
     private func fetchMeal(categoryType: String) {
-        AF.request("https://www.themealdb.com/api/json/v1/1/filter.php?c=\(categoryType)")
+        AF.request(API.filterAPI.rawValue + categoryType)
             .validate()
             .responseDecodable(of: Meals.self) { (response) in
                 guard let meals = response.value else { return }
@@ -38,13 +37,12 @@ class HomeViewModel {
     }
     
     private func fetchCategories() {
-        AF.request("https://www.themealdb.com/api/json/v1/1/categories.php")
+        AF.request(API.categoriesAPI.rawValue)
             .validate()
             .responseDecodable(of: Categories.self) { (response) in
                 guard let categories = response.value else { return }
                 self.categoriesServer = categories.all
                 self.delegate?.categoryReloadData()
-                // self.categoryCollectionView.reloadData()
                 if self.isFirstLoad == true {
                     self.isFirstLoad = false
                     self.fetchMeal(categoryType: self.categoriesServer[0].name)
@@ -56,7 +54,6 @@ class HomeViewModel {
         
         fetchMeal(categoryType: categoryType)
     }
-    
 }
 
 extension HomeViewController: HomeViewModelDelegate {

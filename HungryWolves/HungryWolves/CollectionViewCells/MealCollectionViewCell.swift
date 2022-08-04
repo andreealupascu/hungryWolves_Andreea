@@ -29,19 +29,12 @@ class MealCollectionViewCell: UICollectionViewCell {
         whiteBackground.layer.shouldRasterize = true
         
         mealImageView.layer.cornerRadius = mealImageView.frame.height / 2
-        mealImageView.layer.masksToBounds = true
-        mealImageView.layer.shadowColor = UIColor.gray.cgColor
-        mealImageView.layer.shadowOpacity = 0.2;
-        mealImageView.layer.shadowOffset = CGSize(width: 0, height: 3)
-        mealImageView.layer.shadowRadius = 2
-        
-        
+            
         let url = URL(string: meal.imageURL)
         mealImageView.kf.setImage(with: url)
         
         if UIDevice.current.screenType == .iPhones_5_5s_5c_SE || UIDevice.current.screenType == .iPhones_6_6s_7_8 {
             mealLabel.font = mealLabel.font.withSize(17)
-            mealImageView.sizeThatFits(CGSize(width: 100, height: 100))
         }
     }
 }
