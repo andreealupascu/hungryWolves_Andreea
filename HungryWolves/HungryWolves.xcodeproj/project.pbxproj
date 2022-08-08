@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C133493628A101170080DD1B /* TagDetailMealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */; };
 		C1428B45289BD89200D03496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1428B44289BD89200D03496 /* Constants.swift */; };
 		C167F723289A8D7F00753740 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C167F722289A8D7F00753740 /* SearchViewModel.swift */; };
 		C167F725289AACDC00753740 /* extensionUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C167F724289AACDC00753740 /* extensionUIColor.swift */; };
@@ -21,6 +22,10 @@
 		C1B060782896CDEA00621E84 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B060772896CDEA00621E84 /* Category.swift */; };
 		C1B0607D2896E0B600621E84 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */; };
 		C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B060B02896EAE300621E84 /* MealCollectionViewCell.swift */; };
+		C1D3EF6B289D116500D3B46E /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */; };
+		C1D3EF6E289D3E4600D3B46E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF6D289D3E4600D3B46E /* Detail.swift */; };
+		C1D3EF70289D3E5300D3B46E /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF6F289D3E5300D3B46E /* Details.swift */; };
+		C1D3EF72289D40B100D3B46E /* MealDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF71289D40B100D3B46E /* MealDetailViewModel.swift */; };
 		C1EFEFB228954EBF00CB0A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EFEFB128954EBF00CB0A58 /* AppDelegate.swift */; };
 		C1EFEFB428954EBF00CB0A58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EFEFB328954EBF00CB0A58 /* SceneDelegate.swift */; };
 		C1EFEFB628954EBF00CB0A58 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EFEFB528954EBF00CB0A58 /* HomeViewController.swift */; };
@@ -32,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailMealCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1428B44289BD89200D03496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C167F722289A8D7F00753740 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		C167F724289AACDC00753740 /* extensionUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionUIColor.swift; sourceTree = "<group>"; };
@@ -46,6 +52,10 @@
 		C1B060772896CDEA00621E84 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B060B02896EAE300621E84 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
+		C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
+		C1D3EF6D289D3E4600D3B46E /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		C1D3EF6F289D3E5300D3B46E /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
+		C1D3EF71289D40B100D3B46E /* MealDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewModel.swift; sourceTree = "<group>"; };
 		C1EFEFAE28954EBF00CB0A58 /* HungryWolves.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HungryWolves.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1EFEFB128954EBF00CB0A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1EFEFB328954EBF00CB0A58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 				C1B060B02896EAE300621E84 /* MealCollectionViewCell.swift */,
 				C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */,
 				C1795BF02898489C004EC6EE /* SearchCollectionViewCell.swift */,
+				C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -87,6 +98,8 @@
 				C1B0606D2896BFDC00621E84 /* Meals.swift */,
 				C1B060772896CDEA00621E84 /* Category.swift */,
 				C1B0606E2896BFDC00621E84 /* Categories.swift */,
+				C1D3EF6D289D3E4600D3B46E /* Detail.swift */,
+				C1D3EF6F289D3E5300D3B46E /* Details.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -96,6 +109,7 @@
 			children = (
 				C1EFEFB528954EBF00CB0A58 /* HomeViewController.swift */,
 				C1795BEE2897F3EC004EC6EE /* SearchViewController.swift */,
+				C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -105,6 +119,7 @@
 			children = (
 				C18C9F282898F22F00540043 /* HomeViewModel.swift */,
 				C167F722289A8D7F00753740 /* SearchViewModel.swift */,
+				C1D3EF71289D40B100D3B46E /* MealDetailViewModel.swift */,
 			);
 			name = ViewModel;
 			path = ViewController/ViewModel;
@@ -227,8 +242,11 @@
 			files = (
 				C1B060712896BFDD00621E84 /* Meals.swift in Sources */,
 				C1428B45289BD89200D03496 /* Constants.swift in Sources */,
+				C1D3EF6B289D116500D3B46E /* MealDetailsViewController.swift in Sources */,
 				C18C9F2B289938C200540043 /* extensionUIDevice.swift in Sources */,
+				C1D3EF6E289D3E4600D3B46E /* Detail.swift in Sources */,
 				C1795BEF2897F3EC004EC6EE /* SearchViewController.swift in Sources */,
+				C1D3EF70289D3E5300D3B46E /* Details.swift in Sources */,
 				C1795BF12898489C004EC6EE /* SearchCollectionViewCell.swift in Sources */,
 				C1EFEFB628954EBF00CB0A58 /* HomeViewController.swift in Sources */,
 				C1B060742896BFDD00621E84 /* Meal.swift in Sources */,
@@ -238,8 +256,10 @@
 				C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */,
 				C18C9F292898F22F00540043 /* HomeViewModel.swift in Sources */,
 				C1B060782896CDEA00621E84 /* Category.swift in Sources */,
+				C1D3EF72289D40B100D3B46E /* MealDetailViewModel.swift in Sources */,
 				C167F725289AACDC00753740 /* extensionUIColor.swift in Sources */,
 				C1B0607D2896E0B600621E84 /* CategoryCollectionViewCell.swift in Sources */,
+				C133493628A101170080DD1B /* TagDetailMealCollectionViewCell.swift in Sources */,
 				C1B060732896BFDD00621E84 /* Protocols.swift in Sources */,
 				C1EFEFB428954EBF00CB0A58 /* SceneDelegate.swift in Sources */,
 			);

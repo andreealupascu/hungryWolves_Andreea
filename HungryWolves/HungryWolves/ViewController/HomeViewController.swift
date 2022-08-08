@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var isFirstLoad: Bool = true
     let screenSize: CGRect = UIScreen.main.bounds
     let homeViewModel = HomeViewModel()
+    var mealDetailCollectionView = MealDetailsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             categoryCollectionView.collectionViewLayout = layout
         }
         self.homeViewModel.delegate = self
+        
+    }
+    
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
         
     }
 }
@@ -123,7 +128,6 @@ extension HomeViewController {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.homeViewModel.mealsServer.count, self.homeViewModel.categoriesServer.count)
         if collectionView == categoryCollectionView {
             return self.homeViewModel.categoriesServer.count
         } else if collectionView == mealCollectionView {
@@ -166,7 +170,12 @@ extension HomeViewController {
                 self.homeViewModel.categorySelected(categoryType: cell.categoryLabelText.text ?? "" )
             }
         }
-    }
+        if collectionView == mealCollectionView {
+            print(self.homeViewModel.mealsServer[indexPath.item].id)
+            performSegue(withIdentifier: "idDetailsSegue", sender: self.homeViewModel.mealsServer[indexPath.item].id)
+
+            }
+        }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
@@ -176,5 +185,13 @@ extension HomeViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "idDetailsSegue" {
+                let destination = segue.destination as! MealDetailsViewController
+                destination.mealID = sender as? String ?? ""
+                print(destination.mealID)
+            }
+        }
     
 }

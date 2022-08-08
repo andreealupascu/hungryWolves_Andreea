@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-protocol SearchViewModelDelegate: AnyObject{
+protocol SearchViewModelDelegate: AnyObject {
     func searchReloadData()
 }
 
@@ -33,7 +33,6 @@ class SearchViewModel {
                     self.delegate?.searchReloadData()
                     break
                 case .failure(_):
-                    print("nada raspuns")
                     self.mealsSearch = []
                     self.delegate?.searchReloadData()
                     break

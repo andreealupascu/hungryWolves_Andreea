@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-protocol HomeViewModelDelegate: AnyObject{
+protocol HomeViewModelDelegate: AnyObject {
     func mealReloadData()
     func categoryReloadData()
 }
