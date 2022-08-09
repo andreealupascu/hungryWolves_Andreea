@@ -173,9 +173,9 @@ extension HomeViewController {
         if collectionView == mealCollectionView {
             print(self.homeViewModel.mealsServer[indexPath.item].id)
             performSegue(withIdentifier: "idDetailsSegue", sender: self.homeViewModel.mealsServer[indexPath.item].id)
-
-            }
+            
         }
+    }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
@@ -187,11 +187,10 @@ extension HomeViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "idDetailsSegue" {
-                let destination = segue.destination as! MealDetailsViewController
-                destination.mealID = sender as? String ?? ""
-                print(destination.mealID)
-            }
+        if segue.identifier == "idDetailsSegue" {
+            let destination = segue.destination as! MealDetailsViewController
+            destination.mealID = sender as? String ?? ""
+            print(destination.mealID)
         }
-    
+    }
 }
