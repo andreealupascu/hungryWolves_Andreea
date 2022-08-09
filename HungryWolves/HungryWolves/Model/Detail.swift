@@ -37,7 +37,7 @@ struct Detail: Decodable {
     }
 }
 
-extension Detail:  DiplaybleDetails {
+extension Detail: DisplayableDetails {
     var idMealLabelText: String {
         id
     }

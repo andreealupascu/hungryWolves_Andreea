@@ -12,6 +12,7 @@ import Alamofire
 protocol MealDetailViewModelDelegate: AnyObject {
     func detailReloadData()
     func tagsReloadData()
+    func updateDetailMeal(with detail: Detail)
 }
 
 class MealDetailViewModel {
@@ -37,6 +38,8 @@ class MealDetailViewModel {
                     self.tagsArray = self.detailServer?.tags.components(separatedBy: ",") ?? []
                     self.delegate?.detailReloadData()
                     self.delegate?.tagsReloadData()
+                    guard let details = self.detailServer else { return }
+                    self.delegate?.updateDetailMeal(with: details)
                     break
                 case .failure(_):
                     self.detailsServer = []
@@ -59,6 +62,22 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
     func tagsReloadData() {
         self.tagsCollectionView.reloadData()
     }
+    func updateDetailMeal(with detail: Detail) {
+        nameMealTextLabel.text = detail.name
+        let url = URL(string: self.mealDetailViewModel.detailServer?.imageURL ?? "")
+        thumbnailFirstImageView.kf.setImage(with: url)
+        thumbnailSecondImageView.kf.setImage(with: url)
+        measureFirstLabelText.text = detail.measureFirst
+        measureSecondLabelText.text = detail.measureSecond
+        measureThirdLabelText.text = detail.measureThird
+        ingredientFirstLabelText.text = detail.ingredientFirst
+        ingredientSecondLabelText.text = detail.ingredientSecond
+        ingredientThirdLabelText.text = detail.ingredientThird
+        instructionsLabelText.text = detail.instructions
+        thumbnailFirstImageView.layer.cornerRadius = thumbnailFirstImageView.frame.width / 2
+        thumbnailSecondImageView.layer.cornerRadius = thumbnailSecondImageView.frame.width / 2
+    }
     
 }
+
 

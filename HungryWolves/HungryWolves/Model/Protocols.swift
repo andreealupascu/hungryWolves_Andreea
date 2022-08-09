@@ -4,12 +4,12 @@ protocol Displayable {
     var imageURLLabelText: (label: String, value: String) { get }
 }
 
-protocol DisplaybleCategories {
+protocol DisplayableCategories {
     var idCategoryText: String { get }
     var nameCategoryLabelText: (label: String, value: String) { get }
 }
 
-protocol DiplaybleDetails {
+protocol DisplayableDetails {
     var idMealLabelText: String { get }
     var nameLabelText: (label: String, value: String) { get }
     var imageURLLabelText: (label: String, value: String) { get }

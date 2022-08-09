@@ -17,7 +17,7 @@ struct Category: Decodable {
     }
 }
 
-extension Category: DisplaybleCategories {
+extension Category: DisplayableCategories {
     
     var idCategoryText: String {
         id

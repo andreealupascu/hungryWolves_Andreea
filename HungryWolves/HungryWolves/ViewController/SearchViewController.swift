@@ -45,10 +45,10 @@ extension SearchViewController {
     func searchGenerateGridLayout() -> UICollectionViewLayout {
         let padding: CGFloat = 20
         var setWidthPercent = 2.4
-        var peddingPercent = 1.8
+        var paddingPercent = 1.8
         if screenSize.width <= 400 {
             setWidthPercent = 2.2
-            peddingPercent = 1.4
+            paddingPercent = 1.4
         }
         
         let item = NSCollectionLayoutItem(
@@ -78,13 +78,12 @@ extension SearchViewController {
         section.interGroupSpacing = padding
         section.contentInsets = NSDirectionalEdgeInsets(
             top: padding,
-            leading: padding * peddingPercent,
+            leading: padding * paddingPercent,
             bottom: padding,
             trailing: 0
         )
         return UICollectionViewCompositionalLayout(section: section)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.searchViewModel.mealsSearch.count == 0 {
@@ -107,15 +106,16 @@ extension SearchViewController {
         }
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "idDetailsSegue2", sender: self.searchViewModel.mealsSearch[indexPath.item].id)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "idDetailsSegue2" {
-                let destination = segue.destination as! MealDetailsViewController
-                destination.mealID = sender as? String ?? ""
-                print(destination.mealID)
-            }
+        if segue.identifier == "idDetailsSegue2" {
+            let destination = segue.destination as! MealDetailsViewController
+            destination.mealID = sender as? String ?? ""
+            print(destination.mealID)
         }
+    }
 }
