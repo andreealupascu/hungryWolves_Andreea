@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import WebKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -15,23 +16,34 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var favoritesView: UIView!
     @IBOutlet weak var profileInfoView: UIView!
-    
     @IBOutlet weak var termsAndCondtionsView: UIView!
+    @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var backButtonView: UIView!
     @IBAction func termsAndConditionButtonTapped(_ sender: Any) {
-        guard let url = URL(string: "https://www.wolfpack-digital.com/privacy") else { return }
-        UIApplication.shared.open(url)
+        let url = "https://www.wolfpack-digital.com/privacy"
+        let urlRequest = URLRequest(url: URL(string: url)!)
+        webView.load(urlRequest)
+        webView.layer.opacity = 1.0
+        backButtonView.layer.opacity = 1.0
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        webView.layer.opacity = 0.0
+        backButtonView.layer.opacity = 0.0
     }
     
     @IBAction func favoritesButtonTapped(_ sender: Any) {
         self.tabBarController?.selectedIndex = 1
     }
     
+    
     var profileViewModel = ProfileViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        webView.layer.opacity = 0.0
+        backButtonView.layer.opacity = 0.0
         favoritesView.layer.cornerRadius = 15
         profileInfoView.layer.cornerRadius = 15
         termsAndCondtionsView.layer.cornerRadius = 15

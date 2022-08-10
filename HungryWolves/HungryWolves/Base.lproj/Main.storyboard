@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H4U-uF-ol8">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAz-cJ-2Ao">
-                                <rect key="frame" x="45" y="199" width="324" height="50"/>
+                                <rect key="frame" x="45" y="199" width="338" height="50"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="xUu-gI-3yq"/>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHD-te-tsV">
-                                <rect key="frame" x="40" y="59" width="329" height="100"/>
+                                <rect key="frame" x="40" y="59" width="343" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Ogh-3S-XJb"/>
                                 </constraints>
@@ -61,7 +61,7 @@ food for you</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jZ6-GA-LIZ">
-                                <rect key="frame" x="8" y="269" width="398" height="75"/>
+                                <rect key="frame" x="8" y="269" width="412" height="75"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="6OY-nQ-7YA"/>
@@ -127,7 +127,7 @@ food for you</string>
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="t2G-nR-b62">
-                                <rect key="frame" x="8" y="354" width="414" height="340"/>
+                                <rect key="frame" x="8" y="383" width="428" height="340"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="340" id="GeG-Ft-NcV"/>
@@ -220,10 +220,11 @@ food for you</string>
                             <constraint firstItem="t2G-nR-b62" firstAttribute="top" secondItem="jZ6-GA-LIZ" secondAttribute="bottom" priority="400" constant="45" id="XDL-TP-HKm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="OAz-cJ-2Ao" secondAttribute="trailing" constant="45" id="dYg-K4-1g9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="t2G-nR-b62" secondAttribute="bottom" priority="500" constant="120" id="etV-D3-6UO"/>
-                            <constraint firstItem="oHD-te-tsV" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ofE-Cj-w0D"/>
+                            <constraint firstItem="oHD-te-tsV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="500" constant="40" id="ofE-Cj-w0D"/>
                             <constraint firstItem="jZ6-GA-LIZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="tLM-CZ-Ha7"/>
                             <constraint firstItem="oHD-te-tsV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="udu-5w-FSP"/>
                             <constraint firstItem="t2G-nR-b62" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ufU-v5-9rr"/>
+                            <constraint firstItem="oHD-te-tsV" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="xgH-2H-tm4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lCn-aC-jSU"/>
@@ -242,7 +243,7 @@ food for you</string>
             <objects>
                 <viewController id="dsc-Dv-KQ6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nSF-uZ-VMH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Czr-5k-5J6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -260,24 +261,24 @@ food for you</string>
             <objects>
                 <viewController id="kK7-Pn-IO3" customClass="ProfileViewController" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UNn-KQ-OID">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dK7-9o-Z2w">
-                                <rect key="frame" x="55" y="209" width="304" height="130"/>
+                                <rect key="frame" x="55" y="209" width="318" height="130"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="wyZ-z2-tej">
                                         <rect key="frame" x="10" y="18" width="91" height="91"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="91" id="gCG-id-A26"/>
-                                            <constraint firstAttribute="width" constant="91" id="viH-x2-LCz"/>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="91" id="gCG-id-A26"/>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="91" id="viH-x2-LCz"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nps-Pq-niu">
-                                        <rect key="frame" x="121" y="15" width="160" height="100"/>
+                                        <rect key="frame" x="116" y="15" width="192" height="100"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFv-me-8Tq">
-                                                <rect key="frame" x="0.0" y="0.0" width="160" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192" height="33"/>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
@@ -288,21 +289,20 @@ food for you</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZM-SZ-zoJ">
-                                                <rect key="frame" x="0.0" y="43" width="160" height="18"/>
+                                                <rect key="frame" x="0.0" y="43" width="192" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1o-Au-fis">
-                                                <rect key="frame" x="0.0" y="71" width="160" height="1"/>
+                                                <rect key="frame" x="0.0" y="71" width="192" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="160" id="mHq-cS-JLz"/>
                                                     <constraint firstAttribute="height" constant="1" id="uZn-VV-9JK"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgQ-td-zs1">
-                                                <rect key="frame" x="0.0" y="82" width="160" height="18"/>
+                                                <rect key="frame" x="0.0" y="82" width="192" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -319,15 +319,16 @@ food for you</string>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="wyZ-z2-tej" firstAttribute="top" secondItem="dK7-9o-Z2w" secondAttribute="top" constant="18" id="0cM-WU-LS3"/>
+                                    <constraint firstAttribute="trailing" secondItem="nps-Pq-niu" secondAttribute="trailing" constant="10" id="2BT-e3-8UQ"/>
                                     <constraint firstAttribute="height" constant="130" id="GZu-tf-dhG"/>
                                     <constraint firstAttribute="bottom" secondItem="nps-Pq-niu" secondAttribute="bottom" constant="15" id="Iua-hj-wbu"/>
                                     <constraint firstItem="wyZ-z2-tej" firstAttribute="leading" secondItem="dK7-9o-Z2w" secondAttribute="leading" constant="10" id="MvT-bx-lYq"/>
-                                    <constraint firstItem="nps-Pq-niu" firstAttribute="leading" secondItem="wyZ-z2-tej" secondAttribute="trailing" constant="20" id="VBT-2O-Wct"/>
+                                    <constraint firstItem="nps-Pq-niu" firstAttribute="leading" secondItem="wyZ-z2-tej" secondAttribute="trailing" constant="15" id="VBT-2O-Wct"/>
                                     <constraint firstItem="nps-Pq-niu" firstAttribute="top" secondItem="dK7-9o-Z2w" secondAttribute="top" constant="15" id="o4H-Yk-twF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOD-nx-YIR">
-                                <rect key="frame" x="55" y="369" width="304" height="75"/>
+                                <rect key="frame" x="55" y="369" width="318" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HCq-Uf-uRT">
                                         <rect key="frame" x="20" y="25" width="80" height="25"/>
@@ -339,7 +340,7 @@ food for you</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGx-JE-luz">
-                                        <rect key="frame" x="247" y="20" width="37" height="35"/>
+                                        <rect key="frame" x="261" y="20" width="37" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="w0g-iQ-heA"/>
                                         </constraints>
@@ -392,7 +393,7 @@ food for you</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH6-4B-bOl">
-                                <rect key="frame" x="55" y="474" width="304" height="75"/>
+                                <rect key="frame" x="55" y="474" width="318" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms and conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pt-1s-qEF">
                                         <rect key="frame" x="20" y="25" width="172.33333333333334" height="25"/>
@@ -404,7 +405,7 @@ food for you</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxY-63-qfZ">
-                                        <rect key="frame" x="247" y="20" width="37" height="35"/>
+                                        <rect key="frame" x="261" y="20" width="37" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="37" id="eud-n8-Cd7"/>
                                         </constraints>
@@ -412,7 +413,6 @@ food for you</string>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.forward" catalog="system"/>
                                         <connections>
-                                            <action selector="favoritesButtonTapped:" destination="kK7-Pn-IO3" eventType="touchUpInside" id="Unk-G1-ZHM"/>
                                             <action selector="termsAndConditionButtonTapped:" destination="kK7-Pn-IO3" eventType="touchUpInside" id="llX-9e-nKL"/>
                                         </connections>
                                     </button>
@@ -429,20 +429,57 @@ food for you</string>
                                     <constraint firstAttribute="bottom" secondItem="YxY-63-qfZ" secondAttribute="bottom" constant="20" id="veM-aS-cj8"/>
                                 </constraints>
                             </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jor-nc-vK5">
+                                <rect key="frame" x="0.0" y="109" width="428" height="739"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Isv-ib-ka9">
+                                <rect key="frame" x="0.0" y="44" width="428" height="69"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shG-Nm-api">
+                                        <rect key="frame" x="8" y="19" width="37" height="31"/>
+                                        <color key="tintColor" white="0.35999999999999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="kK7-Pn-IO3" eventType="touchUpInside" id="e9u-sT-1pV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="shG-Nm-api" secondAttribute="trailing" constant="20" symbolic="YES" id="1aX-id-Zcd"/>
+                                    <constraint firstAttribute="bottom" secondItem="shG-Nm-api" secondAttribute="bottom" constant="19" id="8Fi-dp-WyB"/>
+                                    <constraint firstItem="shG-Nm-api" firstAttribute="top" secondItem="Isv-ib-ka9" secondAttribute="top" constant="19" id="TD3-22-8mU"/>
+                                    <constraint firstItem="shG-Nm-api" firstAttribute="leading" secondItem="Isv-ib-ka9" secondAttribute="leading" constant="8" id="pAB-R5-imr"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ift-FO-S76"/>
                         <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dK7-9o-Z2w" firstAttribute="centerX" secondItem="UNn-KQ-OID" secondAttribute="centerX" id="3Jt-p5-7s4"/>
+                            <constraint firstItem="Isv-ib-ka9" firstAttribute="leading" secondItem="jor-nc-vK5" secondAttribute="leading" id="8mY-R1-ySo"/>
                             <constraint firstItem="zOD-nx-YIR" firstAttribute="centerX" secondItem="UNn-KQ-OID" secondAttribute="centerX" id="A4z-Sm-DPR"/>
                             <constraint firstItem="dK7-9o-Z2w" firstAttribute="top" secondItem="Hg7-zR-vAR" secondAttribute="bottom" constant="55" id="EkQ-Xt-AX1"/>
                             <constraint firstItem="dK7-9o-Z2w" firstAttribute="leading" secondItem="ift-FO-S76" secondAttribute="leading" constant="55" id="HXF-1r-Pli"/>
                             <constraint firstItem="gH6-4B-bOl" firstAttribute="leading" secondItem="zOD-nx-YIR" secondAttribute="leading" id="INe-TV-zVs"/>
                             <constraint firstItem="Hg7-zR-vAR" firstAttribute="leading" secondItem="ift-FO-S76" secondAttribute="leading" constant="55" id="RJS-Zm-Gj9"/>
+                            <constraint firstItem="jor-nc-vK5" firstAttribute="top" secondItem="ift-FO-S76" secondAttribute="top" constant="65" id="RMK-0x-99f"/>
                             <constraint firstItem="zOD-nx-YIR" firstAttribute="top" secondItem="dK7-9o-Z2w" secondAttribute="bottom" constant="30" id="SxJ-LO-2Au"/>
+                            <constraint firstItem="dK7-9o-Z2w" firstAttribute="top" secondItem="Isv-ib-ka9" secondAttribute="bottom" constant="96" id="Tjd-OG-4Om"/>
                             <constraint firstItem="zOD-nx-YIR" firstAttribute="leading" secondItem="ift-FO-S76" secondAttribute="leading" constant="55" id="WC6-5b-7g9"/>
+                            <constraint firstItem="Isv-ib-ka9" firstAttribute="top" secondItem="ift-FO-S76" secondAttribute="top" id="X1O-yd-0TI"/>
+                            <constraint firstItem="jor-nc-vK5" firstAttribute="leading" secondItem="ift-FO-S76" secondAttribute="leading" id="XPE-5r-EtC"/>
                             <constraint firstItem="gH6-4B-bOl" firstAttribute="trailing" secondItem="zOD-nx-YIR" secondAttribute="trailing" id="c82-cP-PKq"/>
+                            <constraint firstItem="ift-FO-S76" firstAttribute="bottom" secondItem="jor-nc-vK5" secondAttribute="bottom" constant="-5" id="fhN-uV-Wp1"/>
+                            <constraint firstItem="Isv-ib-ka9" firstAttribute="trailing" secondItem="jor-nc-vK5" secondAttribute="trailing" id="jG5-MQ-JIU"/>
                             <constraint firstItem="Hg7-zR-vAR" firstAttribute="top" secondItem="ift-FO-S76" secondAttribute="top" constant="60" id="kfE-it-VjB"/>
+                            <constraint firstItem="ift-FO-S76" firstAttribute="trailing" secondItem="jor-nc-vK5" secondAttribute="trailing" id="nMf-Dd-O4l"/>
                             <constraint firstItem="gH6-4B-bOl" firstAttribute="top" secondItem="zOD-nx-YIR" secondAttribute="bottom" constant="30" id="pQQ-7g-if7"/>
                             <constraint firstItem="ift-FO-S76" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hg7-zR-vAR" secondAttribute="trailing" symbolic="YES" id="qPd-Xz-d57"/>
                         </constraints>
@@ -451,12 +488,14 @@ food for you</string>
                         <color key="badgeColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="backButtonView" destination="Isv-ib-ka9" id="ScA-t3-CD7"/>
                         <outlet property="emailLabel" destination="3ZM-SZ-zoJ" id="SuH-Qn-CkB"/>
                         <outlet property="favoritesView" destination="zOD-nx-YIR" id="sDn-LQ-mTc"/>
                         <outlet property="nameLabel" destination="OFv-me-8Tq" id="ApU-id-wuI"/>
                         <outlet property="phoneLabel" destination="QgQ-td-zs1" id="6zG-MU-NTM"/>
                         <outlet property="profileInfoView" destination="dK7-9o-Z2w" id="JXR-QB-snv"/>
                         <outlet property="termsAndCondtionsView" destination="gH6-4B-bOl" id="KZn-RR-BYF"/>
+                        <outlet property="webView" destination="jor-nc-vK5" id="or1-MY-fWW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BND-0I-0pc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -468,19 +507,19 @@ food for you</string>
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="424-3n-8SY" customClass="SearchViewController" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="center" id="bY4-99-pBM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="PIS-wH-izj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="211"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="211"/>
                                 <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="s0h-GI-2AS">
-                                <rect key="frame" x="30" y="128" width="354" height="30.666666666666657"/>
+                                <rect key="frame" x="30" y="128" width="368" height="30.666666666666657"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWm-cs-4D6">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="62.333333333333336" height="30.666666666666668"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -490,7 +529,7 @@ food for you</string>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="leading" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Tap here to search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LyI-ZF-kgH">
-                                        <rect key="frame" x="100" y="4.3333333333333428" width="254" height="22"/>
+                                        <rect key="frame" x="102.33333333333334" y="4.3333333333333428" width="265.66666666666663" height="22"/>
                                         <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="tintColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <attributedString key="attributedText"/>
@@ -502,7 +541,7 @@ food for you</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sd-t2-cSv">
-                                <rect key="frame" x="0.0" y="208.66666666666663" width="414" height="120"/>
+                                <rect key="frame" x="0.0" y="208.66666666666663" width="428" height="120"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="MLm-Zf-wmj"/>
@@ -519,7 +558,7 @@ food for you</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XaO-6M-63v">
-                                <rect key="frame" x="0.0" y="313.66666666666669" width="414" height="582.33333333333326"/>
+                                <rect key="frame" x="0.0" y="313.66666666666669" width="428" height="612.33333333333326"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="hqV-76-Hyo">
                                     <size key="itemSize" width="156" height="212"/>
@@ -677,14 +716,14 @@ a different keyword.</string>
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="4C5-j9-jk7" customClass="MealDetailsViewController" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e2I-pF-IwF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-TV-I4h">
-                                <rect key="frame" x="20" y="74" width="374" height="35"/>
+                                <rect key="frame" x="20" y="74" width="388" height="35"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FAw-oS-tGZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="129" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="143" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="18b-VW-4ue"/>
                                             <constraint firstAttribute="height" constant="35" id="jNO-lb-fR4"/>
@@ -698,10 +737,10 @@ a different keyword.</string>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhh-je-P8b">
-                                        <rect key="frame" x="129" y="0.0" width="195" height="35"/>
+                                        <rect key="frame" x="143" y="0.0" width="195" height="35"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr5-Ea-DJy">
-                                        <rect key="frame" x="324" y="0.0" width="50" height="35"/>
+                                        <rect key="frame" x="338" y="0.0" width="50" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="19q-wb-Hi3"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="All-Zm-36a"/>
@@ -721,10 +760,10 @@ a different keyword.</string>
                                 </constraints>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Reh-T3-V06" userLabel="MealScrollView">
-                                <rect key="frame" x="0.0" y="149" width="414" height="747"/>
+                                <rect key="frame" x="0.0" y="149" width="428" height="777"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PK9-s5-8ee">
-                                        <rect key="frame" x="40" y="325" width="364" height="50"/>
+                                        <rect key="frame" x="40" y="325" width="378" height="50"/>
                                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="YVN-9V-NPN"/>
@@ -769,7 +808,7 @@ a different keyword.</string>
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-Ja-cNg">
-                                        <rect key="frame" x="20" y="250" width="374" height="65"/>
+                                        <rect key="frame" x="20" y="250" width="388" height="65"/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="K58-xe-5Ra"/>
@@ -786,7 +825,7 @@ a different keyword.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Fcw-Dd-NgK" userLabel="IngredientsStackView">
-                                        <rect key="frame" x="40" y="385" width="374" height="115"/>
+                                        <rect key="frame" x="40" y="385" width="388" height="115"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXS-RB-qpT">
                                                 <rect key="frame" x="0.0" y="0.0" width="93.333333333333329" height="20.333333333333332"/>
@@ -878,13 +917,13 @@ a different keyword.</string>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TtO-mq-Kbl">
-                                        <rect key="frame" x="40" y="520" width="334" height="20.333333333333371"/>
+                                        <rect key="frame" x="40" y="520" width="348" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PyI-Xn-zw3">
-                                        <rect key="frame" x="40" y="560.33333333333337" width="334" height="304.33333333333337"/>
+                                        <rect key="frame" x="40" y="560.33333333333337" width="348" height="304.33333333333337"/>
                                         <string key="text">Preheat oven to 350° F. Spray a 9x13-inch baking pan with non-stick spray.
 
 Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over medium heat. </string>
@@ -925,7 +964,7 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
                                         <viewLayoutGuide key="frameLayoutGuide" id="MTb-eQ-ONA"/>
                                     </scrollView>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="o2X-Tw-h5e">
-                                        <rect key="frame" x="145" y="230" width="124" height="15"/>
+                                        <rect key="frame" x="145" y="230" width="138" height="15"/>
                                         <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="currentPageIndicatorTintColor" red="0.98039215690000003" green="0.2901960784" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </pageControl>
