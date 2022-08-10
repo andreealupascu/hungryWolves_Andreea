@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     var isFirstLoad: Bool = true
     let screenSize: CGRect = UIScreen.main.bounds
     let homeViewModel = HomeViewModel()
+    var mealDetailCollectionView = MealDetailsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             categoryCollectionView.collectionViewLayout = layout
         }
         self.homeViewModel.delegate = self
+        
+    }
+    
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
         
     }
 }
@@ -123,7 +128,6 @@ extension HomeViewController {
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.homeViewModel.mealsServer.count, self.homeViewModel.categoriesServer.count)
         if collectionView == categoryCollectionView {
             return self.homeViewModel.categoriesServer.count
         } else if collectionView == mealCollectionView {
@@ -166,6 +170,11 @@ extension HomeViewController {
                 self.homeViewModel.categorySelected(categoryType: cell.categoryLabelText.text ?? "" )
             }
         }
+        if collectionView == mealCollectionView {
+            print(self.homeViewModel.mealsServer[indexPath.item].id)
+            performSegue(withIdentifier: "idDetailsSegue", sender: self.homeViewModel.mealsServer[indexPath.item].id)
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -174,6 +183,14 @@ extension HomeViewController {
                 cell.categoryLabelText.textColor = UIColor(red: 154, green: 154, blue: 157, a: 1)
                 cell.lineImageView.backgroundColor  = UIColor(red: 229, green: 229, blue: 229, a: 1)
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "idDetailsSegue" {
+            let destination = segue.destination as! MealDetailsViewController
+            destination.mealID = sender as? String ?? ""
+            print(destination.mealID)
         }
     }
     

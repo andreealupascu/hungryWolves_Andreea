@@ -10,7 +10,6 @@ import UIKit
 class SearchViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var searchCollectionView: UICollectionView!
-    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var foundMealsLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var itemNotFoundView: UIView!
@@ -20,7 +19,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     @IBAction func backButton(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -31,7 +29,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        backgroundImageView.layer.cornerRadius = backgroundImageView.frame.height / 25
+        foundMealsLabel.layer.masksToBounds = true
+        foundMealsLabel.layer.cornerRadius = 20
         layoutSearch = searchGenerateGridLayout()
         if let layout = layoutSearch {
             searchCollectionView.collectionViewLayout = layout
@@ -46,9 +45,10 @@ extension SearchViewController {
     func searchGenerateGridLayout() -> UICollectionViewLayout {
         let padding: CGFloat = 20
         var setWidthPercent = 2.4
-        
+        var paddingPercent = 1.8
         if screenSize.width <= 400 {
             setWidthPercent = 2.2
+            paddingPercent = 1.4
         }
         
         let item = NSCollectionLayoutItem(
@@ -69,7 +69,7 @@ extension SearchViewController {
         
         group.contentInsets = NSDirectionalEdgeInsets(
             top: 0,
-            leading: padding,
+            leading: 0,
             bottom: 0,
             trailing: padding
         )
@@ -78,13 +78,12 @@ extension SearchViewController {
         section.interGroupSpacing = padding
         section.contentInsets = NSDirectionalEdgeInsets(
             top: padding,
-            leading: 0,
+            leading: padding * paddingPercent,
             bottom: padding,
             trailing: 0
         )
         return UICollectionViewCompositionalLayout(section: section)
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.searchViewModel.mealsSearch.count == 0 {
@@ -106,5 +105,17 @@ extension SearchViewController {
             foundMealsLabel.text = "Found \(self.searchViewModel.mealsSearch.count) results"
         }
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "idDetailsSegue2", sender: self.searchViewModel.mealsSearch[indexPath.item].id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "idDetailsSegue2" {
+            let destination = segue.destination as! MealDetailsViewController
+            destination.mealID = sender as? String ?? ""
+            print(destination.mealID)
+        }
     }
 }
