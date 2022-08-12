@@ -171,8 +171,9 @@ extension HomeViewController {
             }
         }
         if collectionView == mealCollectionView {
-            performSegue(withIdentifier: "idDetailsSegue", sender: self.homeViewModel.mealsServer[indexPath.item].id)
-            
+            print(self.homeViewModel.mealsServer[indexPath.item].id)
+            performSegue(withIdentifier: "idDetailsSegue", sender:
+                            self.homeViewModel.mealsServer[indexPath.item].id)
         }
     }
     

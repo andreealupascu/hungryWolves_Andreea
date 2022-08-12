@@ -35,7 +35,10 @@ class MealDetailViewModel {
                     guard let details = response.value else { return }
                     self.detailsServer = details.all
                     self.detailServer = self.detailsServer[0]
-                    self.tagsArray = self.detailServer?.tags.components(separatedBy: ",") ?? []
+                    if ((self.detailServer?.tags) != nil) {
+                        self.tagsArray = self.detailServer?.tags!.components(separatedBy: ",") ?? []
+                    }
+                    print(self.tagsArray)
                     self.delegate?.detailReloadData()
                     self.delegate?.tagsReloadData()
                     guard let details = self.detailServer else { return }
@@ -66,7 +69,9 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         nameMealTextLabel.text = detail.name
         let url = URL(string: self.mealDetailViewModel.detailServer?.imageURL ?? "")
         thumbnailFirstImageView.kf.setImage(with: url)
-        thumbnailSecondImageView.kf.setImage(with: url)
+        let ytUrlString = "https://img.youtube.com/vi/" + saveIDYoutubeURL(url: self.mealDetailViewModel.detailServer!.youtubeURL) + "/default.jpg"
+        let ytUrl = URL(string: ytUrlString)
+        thumbnailSecondImageView.kf.setImage(with: ytUrl)
         measureFirstLabelText.text = detail.measureFirst
         measureSecondLabelText.text = detail.measureSecond
         measureThirdLabelText.text = detail.measureThird
@@ -76,6 +81,14 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         instructionsLabelText.text = detail.instructions
         thumbnailFirstImageView.layer.cornerRadius = thumbnailFirstImageView.frame.width / 2
         thumbnailSecondImageView.layer.cornerRadius = thumbnailSecondImageView.frame.width / 2
+    }
+    
+    func saveIDYoutubeURL(url: String) -> String {
+        guard let index = url.range(of: "=")?.upperBound else { return "" }
+        let substring = url.suffix(from: index)
+        let string = String(substring)
+        print(string)
+        return string
     }
     
 }
