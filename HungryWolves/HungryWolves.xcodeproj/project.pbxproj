@@ -37,6 +37,11 @@
 		C1EFEFBE28954EBF00CB0A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EFEFBC28954EBF00CB0A58 /* LaunchScreen.storyboard */; };
 		C1EFEFC72895849800CB0A58 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C1EFEFC62895849800CB0A58 /* Alamofire */; };
 		C1EFEFCA289584CF00CB0A58 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C1EFEFC9289584CF00CB0A58 /* Kingfisher */; };
+		C1F8C3C128A393FC00D231A6 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8C3C028A393FC00D231A6 /* FavouritesViewController.swift */; };
+		C1F8C3C328A3946300D231A6 /* FavouritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8C3C228A3946300D231A6 /* FavouritesViewModel.swift */; };
+		C1F8C3C528A3953F00D231A6 /* FavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8C3C428A3953F00D231A6 /* FavouritesTableViewCell.swift */; };
+		C1F8C3C728A3999200D231A6 /* FavouritesFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8C3C628A3999200D231A6 /* FavouritesFileManager.swift */; };
+		C1F8C3C928A3CA5B00D231A6 /* FavouriteMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F8C3C828A3CA5B00D231A6 /* FavouriteMeal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +75,11 @@
 		C1EFEFBA28954EBF00CB0A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1EFEFBD28954EBF00CB0A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1EFEFBF28954EBF00CB0A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1F8C3C028A393FC00D231A6 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		C1F8C3C228A3946300D231A6 /* FavouritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewModel.swift; sourceTree = "<group>"; };
+		C1F8C3C428A3953F00D231A6 /* FavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewCell.swift; sourceTree = "<group>"; };
+		C1F8C3C628A3999200D231A6 /* FavouritesFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesFileManager.swift; sourceTree = "<group>"; };
+		C1F8C3C828A3CA5B00D231A6 /* FavouriteMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteMeal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +102,7 @@
 				C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */,
 				C1795BF02898489C004EC6EE /* SearchCollectionViewCell.swift */,
 				C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */,
+				C1F8C3C428A3953F00D231A6 /* FavouritesTableViewCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -107,6 +118,7 @@
 				C1D3EF6D289D3E4600D3B46E /* Detail.swift */,
 				C1D3EF6F289D3E5300D3B46E /* Details.swift */,
 				C19E329128A273D400B68CD1 /* Profile.swift */,
+				C1F8C3C828A3CA5B00D231A6 /* FavouriteMeal.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -118,6 +130,7 @@
 				C1795BEE2897F3EC004EC6EE /* SearchViewController.swift */,
 				C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */,
 				C19E328F28A272C100B68CD1 /* ProfileViewController.swift */,
+				C1F8C3C028A393FC00D231A6 /* FavouritesViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -129,6 +142,7 @@
 				C167F722289A8D7F00753740 /* SearchViewModel.swift */,
 				C1D3EF71289D40B100D3B46E /* MealDetailViewModel.swift */,
 				C19E329328A2742B00B68CD1 /* ProfileViewModel.swift */,
+				C1F8C3C228A3946300D231A6 /* FavouritesViewModel.swift */,
 			);
 			name = ViewModel;
 			path = ViewController/ViewModel;
@@ -158,6 +172,7 @@
 				C1EFEFB328954EBF00CB0A58 /* SceneDelegate.swift */,
 				C18C9F2A289938C200540043 /* extensionUIDevice.swift */,
 				C167F724289AACDC00753740 /* extensionUIColor.swift */,
+				C1F8C3C628A3999200D231A6 /* FavouritesFileManager.swift */,
 				C1B060792896CFC200621E84 /* Model */,
 				C1B0607A2896CFE100621E84 /* ViewController */,
 				C1795BF2289848A7004EC6EE /* CollectionViewCells */,
@@ -249,10 +264,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1F8C3C128A393FC00D231A6 /* FavouritesViewController.swift in Sources */,
 				C1B060712896BFDD00621E84 /* Meals.swift in Sources */,
 				C1428B45289BD89200D03496 /* Constants.swift in Sources */,
 				C1D3EF6B289D116500D3B46E /* MealDetailsViewController.swift in Sources */,
 				C18C9F2B289938C200540043 /* extensionUIDevice.swift in Sources */,
+				C1F8C3C728A3999200D231A6 /* FavouritesFileManager.swift in Sources */,
+				C1F8C3C928A3CA5B00D231A6 /* FavouriteMeal.swift in Sources */,
 				C1D3EF6E289D3E4600D3B46E /* Detail.swift in Sources */,
 				C1795BEF2897F3EC004EC6EE /* SearchViewController.swift in Sources */,
 				C1D3EF70289D3E5300D3B46E /* Details.swift in Sources */,
@@ -261,6 +279,7 @@
 				C1B060742896BFDD00621E84 /* Meal.swift in Sources */,
 				C167F723289A8D7F00753740 /* SearchViewModel.swift in Sources */,
 				C1B060722896BFDD00621E84 /* Categories.swift in Sources */,
+				C1F8C3C528A3953F00D231A6 /* FavouritesTableViewCell.swift in Sources */,
 				C1EFEFB228954EBF00CB0A58 /* AppDelegate.swift in Sources */,
 				C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */,
 				C19E329428A2742B00B68CD1 /* ProfileViewModel.swift in Sources */,
@@ -269,6 +288,7 @@
 				C1B060782896CDEA00621E84 /* Category.swift in Sources */,
 				C1D3EF72289D40B100D3B46E /* MealDetailViewModel.swift in Sources */,
 				C167F725289AACDC00753740 /* extensionUIColor.swift in Sources */,
+				C1F8C3C328A3946300D231A6 /* FavouritesViewModel.swift in Sources */,
 				C19E329228A273D400B68CD1 /* Profile.swift in Sources */,
 				C1B0607D2896E0B600621E84 /* CategoryCollectionViewCell.swift in Sources */,
 				C133493628A101170080DD1B /* TagDetailMealCollectionViewCell.swift in Sources */,

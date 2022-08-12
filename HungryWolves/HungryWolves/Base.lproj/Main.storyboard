@@ -6,7 +6,6 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -238,23 +237,140 @@ food for you</string>
             </objects>
             <point key="canvasLocation" x="2443" y="61"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="rgI-jc-A17">
+        <!--Favourites View Controller-->
+        <scene sceneID="ycx-Rc-F8j">
             <objects>
-                <viewController id="dsc-Dv-KQ6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nSF-uZ-VMH">
+                <viewController id="EcY-qE-1N1" customClass="FavouritesViewController" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E0p-3p-U4W">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Czr-5k-5J6"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iL2-8s-oDE">
+                                <rect key="frame" x="120" y="146.66666666666666" width="180" height="30"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swipe" translatesAutoresizingMaskIntoConstraints="NO" id="fLS-Fx-fcz">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="KBG-pm-dfc"/>
+                                            <constraint firstAttribute="width" constant="30" id="cRm-3f-NcX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swipe on an item to delete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCY-92-vyI">
+                                        <rect key="frame" x="30" y="0.0" width="150" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Dhp-kH-h6o"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3Xo-iA-lUq">
+                                <rect key="frame" x="40" y="207" width="348" height="636"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="sectionIndexBackgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="FavouritesCell" rowHeight="120" id="cPY-dZ-LMo" customClass="FavouritesTableViewCell" customModule="HungryWolves" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="348" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cPY-dZ-LMo" id="ILq-mM-MIp">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOp-eu-3Dm">
+                                                    <rect key="frame" x="0.0" y="10" width="348" height="100"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="ec8-L8-3aS">
+                                                    <rect key="frame" x="10" y="22" width="75" height="76"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="75" id="amE-V6-7b0"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9o-tK-fqp">
+                                                    <rect key="frame" x="95" y="51" width="187" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="gZo-L6-JR2"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Veggie tomato mix">
+                                                            <attributes>
+                                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                                <font key="NSFont" size="17" name="ArialRoundedMTBold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="s9o-tK-fqp" firstAttribute="leading" secondItem="ec8-L8-3aS" secondAttribute="trailing" constant="10" id="2zG-tT-hCq"/>
+                                                <constraint firstItem="s9o-tK-fqp" firstAttribute="centerY" secondItem="ec8-L8-3aS" secondAttribute="centerY" id="5Xp-sH-R0t"/>
+                                                <constraint firstItem="s9o-tK-fqp" firstAttribute="leading" secondItem="ec8-L8-3aS" secondAttribute="trailing" constant="10" id="5uZ-8L-eYR"/>
+                                                <constraint firstAttribute="bottom" secondItem="ec8-L8-3aS" secondAttribute="bottom" constant="22" id="6og-aK-4Mn"/>
+                                                <constraint firstAttribute="trailing" secondItem="QOp-eu-3Dm" secondAttribute="trailing" id="9R7-4J-UEJ"/>
+                                                <constraint firstItem="QOp-eu-3Dm" firstAttribute="leading" secondItem="ILq-mM-MIp" secondAttribute="leading" id="FwH-66-Bde"/>
+                                                <constraint firstItem="s9o-tK-fqp" firstAttribute="top" secondItem="ILq-mM-MIp" secondAttribute="topMargin" constant="40" id="Ho7-1P-teS"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="s9o-tK-fqp" secondAttribute="trailing" constant="46" id="Pnk-Af-8tP"/>
+                                                <constraint firstItem="s9o-tK-fqp" firstAttribute="centerY" secondItem="ILq-mM-MIp" secondAttribute="centerY" id="QnK-Zp-QbJ"/>
+                                                <constraint firstItem="ec8-L8-3aS" firstAttribute="top" secondItem="ILq-mM-MIp" secondAttribute="top" constant="22" id="UdV-W3-Pmd"/>
+                                                <constraint firstItem="QOp-eu-3Dm" firstAttribute="top" secondItem="ILq-mM-MIp" secondAttribute="top" constant="10" id="bXH-w6-syR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="s9o-tK-fqp" secondAttribute="bottom" constant="40" id="ce5-kf-tyP"/>
+                                                <constraint firstItem="ec8-L8-3aS" firstAttribute="leading" secondItem="ILq-mM-MIp" secondAttribute="leading" constant="10" id="eJT-pN-0bx"/>
+                                                <constraint firstAttribute="bottom" secondItem="QOp-eu-3Dm" secondAttribute="bottom" constant="10" id="xPq-mQ-hTf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="cellBackgroundView" destination="QOp-eu-3Dm" id="YWx-tl-vrp"/>
+                                            <outlet property="mealImageView" destination="ec8-L8-3aS" id="LpU-kF-lUa"/>
+                                            <outlet property="mealNameLabel" destination="s9o-tK-fqp" id="yaC-QS-ldx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EcY-qE-1N1" id="lyb-Cz-6wG"/>
+                                    <outlet property="delegate" destination="EcY-qE-1N1" id="9yy-WR-nnF"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBQ-wr-0eq">
+                                <rect key="frame" x="100" y="63.999999999999993" width="229" height="27.666666666666664"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aCX-in-sjc"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="0.89803921568627454" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="aCX-in-sjc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iL2-8s-oDE" secondAttribute="trailing" constant="60" id="0J7-4t-Zyr"/>
+                            <constraint firstItem="3Xo-iA-lUq" firstAttribute="top" secondItem="iL2-8s-oDE" secondAttribute="bottom" constant="30.333333333333343" id="26V-yA-1UO"/>
+                            <constraint firstItem="VBQ-wr-0eq" firstAttribute="leading" relation="lessThanOrEqual" secondItem="aCX-in-sjc" secondAttribute="leading" constant="120" id="5DI-Hh-COY"/>
+                            <constraint firstItem="aCX-in-sjc" firstAttribute="trailing" secondItem="iL2-8s-oDE" secondAttribute="trailing" priority="500" constant="60" id="6ap-XO-PDl"/>
+                            <constraint firstItem="3Xo-iA-lUq" firstAttribute="leading" secondItem="aCX-in-sjc" secondAttribute="leading" constant="40" id="8Xx-km-zbu"/>
+                            <constraint firstItem="iL2-8s-oDE" firstAttribute="leading" relation="lessThanOrEqual" secondItem="aCX-in-sjc" secondAttribute="leading" constant="120" id="T0R-nL-qTe"/>
+                            <constraint firstItem="iL2-8s-oDE" firstAttribute="leading" secondItem="aCX-in-sjc" secondAttribute="leading" priority="500" constant="120" id="Yso-FE-skb"/>
+                            <constraint firstItem="VBQ-wr-0eq" firstAttribute="top" secondItem="aCX-in-sjc" secondAttribute="top" constant="20" id="e9C-TJ-pRC"/>
+                            <constraint firstItem="aCX-in-sjc" firstAttribute="trailing" secondItem="VBQ-wr-0eq" secondAttribute="trailing" priority="500" constant="99" id="fA4-Qj-XNs"/>
+                            <constraint firstItem="VBQ-wr-0eq" firstAttribute="leading" secondItem="aCX-in-sjc" secondAttribute="leading" priority="750" constant="100" id="h57-tq-C7U"/>
+                            <constraint firstItem="3Xo-iA-lUq" firstAttribute="bottom" secondItem="aCX-in-sjc" secondAttribute="bottom" id="jm0-Nb-ua9"/>
+                            <constraint firstItem="iL2-8s-oDE" firstAttribute="top" secondItem="VBQ-wr-0eq" secondAttribute="bottom" constant="55" id="slM-sl-glU"/>
+                            <constraint firstItem="aCX-in-sjc" firstAttribute="trailing" secondItem="3Xo-iA-lUq" secondAttribute="trailing" constant="40" id="u3e-W7-9cI"/>
+                            <constraint firstItem="aCX-in-sjc" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="VBQ-wr-0eq" secondAttribute="trailing" constant="120" id="wc6-LP-wt7"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" selectedImage="heart.fill" id="XSw-55-Bul">
-                        <color key="badgeColor" red="0.67843137249999996" green="0.67843137249999996" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="u5A-Oh-gJV"/>
+                    <connections>
+                        <outlet property="tabelView" destination="3Xo-iA-lUq" id="fae-cX-UiQ"/>
+                        <segue destination="4C5-j9-jk7" kind="show" identifier="favouriteSegue" animates="NO" id="7Ev-l7-epk"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ESf-gg-iR0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuJ-xp-T87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="26" y="809"/>
+            <point key="canvasLocation" x="2440.6542056074763" y="837.79697624190067"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="7qL-B1-CWO">
@@ -282,6 +398,7 @@ food for you</string>
                                                 <attributedString key="attributedText">
                                                     <fragment content="Label">
                                                         <attributes>
+                                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                             <font key="NSFont" metaFont="system" size="18"/>
                                                         </attributes>
                                                     </fragment>
@@ -291,7 +408,7 @@ food for you</string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZM-SZ-zoJ">
                                                 <rect key="frame" x="0.0" y="43" width="192" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1o-Au-fis">
@@ -304,7 +421,7 @@ food for you</string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QgQ-td-zs1">
                                                 <rect key="frame" x="0.0" y="82" width="192" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -316,7 +433,7 @@ food for you</string>
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="wyZ-z2-tej" firstAttribute="top" secondItem="dK7-9o-Z2w" secondAttribute="top" constant="18" id="0cM-WU-LS3"/>
                                     <constraint firstAttribute="trailing" secondItem="nps-Pq-niu" secondAttribute="trailing" constant="10" id="2BT-e3-8UQ"/>
@@ -336,7 +453,7 @@ food for you</string>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Wpv-Xm-nwe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGx-JE-luz">
@@ -352,7 +469,7 @@ food for you</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="HCq-Uf-uRT" secondAttribute="bottom" constant="25" id="1HI-6x-POd"/>
                                     <constraint firstItem="HCq-Uf-uRT" firstAttribute="top" secondItem="zOD-nx-YIR" secondAttribute="top" constant="25" id="59F-55-FZn"/>
@@ -373,18 +490,21 @@ food for you</string>
                                 <attributedString key="attributedText">
                                     <fragment content="My">
                                         <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <font key="NSFont" metaFont="system" size="38"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content=" ">
                                         <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <font key="NSFont" size="38" name="ArialHebrew"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="profile">
                                         <attributes>
+                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <font key="NSFont" metaFont="system" size="38"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -401,7 +521,7 @@ food for you</string>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="O1K-je-Gv8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YxY-63-qfZ">
@@ -417,7 +537,7 @@ food for you</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="1pt-1s-qEF" firstAttribute="leading" secondItem="gH6-4B-bOl" secondAttribute="leading" constant="20" id="5h9-wy-9HG"/>
                                     <constraint firstAttribute="bottom" secondItem="1pt-1s-qEF" secondAttribute="bottom" constant="25" id="IkK-J1-T8r"/>
@@ -500,7 +620,7 @@ food for you</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BND-0I-0pc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="931.88405797101461" y="808.92857142857144"/>
+            <point key="canvasLocation" x="25" y="838"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="WZn-4g-aaU">
@@ -697,6 +817,7 @@ a different keyword.</string>
                             <constraint firstItem="PIS-wH-izj" firstAttribute="top" secondItem="bY4-99-pBM" secondAttribute="top" id="xab-TB-s2f"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gRu-pu-SqS"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="foundMealsLabel" destination="4Sd-t2-cSv" id="Nct-yk-ifT"/>
@@ -1036,7 +1157,7 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qAH-Uq-bdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4373.913043478261" y="60.9375"/>
+            <point key="canvasLocation" x="3400" y="838"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="57A-d9-HMD">
@@ -1052,7 +1173,7 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
                     </tabBar>
                     <connections>
                         <segue destination="bNB-RD-fT1" kind="relationship" relationship="viewControllers" id="tri-sr-bUz"/>
-                        <segue destination="dsc-Dv-KQ6" kind="relationship" relationship="viewControllers" id="1EG-hf-d6N"/>
+                        <segue destination="nYV-UD-9w9" kind="relationship" relationship="viewControllers" id="RVt-dw-EOW"/>
                         <segue destination="kK7-Pn-IO3" kind="relationship" relationship="viewControllers" id="jBu-7d-asm"/>
                     </connections>
                 </tabBarController>
@@ -1084,17 +1205,33 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
             </objects>
             <point key="canvasLocation" x="1331.8840579710145" y="60.9375"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aKc-58-uTf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="nYV-UD-9w9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="suit.heart" catalog="system" selectedImage="suit.heart.fill" id="uOp-Yx-KpU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MCs-pF-xFf">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EcY-qE-1N1" kind="relationship" relationship="rootViewController" id="GLJ-1J-v6x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVU-TW-cx6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="838"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g3y-KJ-6Ak"/>
+        <segue reference="7Ev-l7-epk"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.forward" catalog="system" width="96" height="128"/>
         <image name="food1" width="165" height="165"/>
         <image name="food2" width="129" height="129"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="image" width="128" height="128"/>
@@ -1104,8 +1241,7 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="square" catalog="system" width="128" height="114"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
+        <image name="swipe" width="60" height="60"/>
     </resources>
 </document>

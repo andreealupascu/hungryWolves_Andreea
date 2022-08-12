@@ -171,7 +171,6 @@ extension HomeViewController {
             }
         }
         if collectionView == mealCollectionView {
-            print(self.homeViewModel.mealsServer[indexPath.item].id)
             performSegue(withIdentifier: "idDetailsSegue", sender: self.homeViewModel.mealsServer[indexPath.item].id)
             
         }
@@ -190,7 +189,6 @@ extension HomeViewController {
         if segue.identifier == "idDetailsSegue" {
             let destination = segue.destination as! MealDetailsViewController
             destination.mealID = sender as? String ?? ""
-            print(destination.mealID)
         }
     }
     

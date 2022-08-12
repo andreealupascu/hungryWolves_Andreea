@@ -25,7 +25,6 @@ class ProfileViewModel {
         self.profile.name = "Andreea Lupașcu"
         self.profile.email = "andreeagabriela12@gmail.com"
         self.profile.phone = "+40 728 717 259"
-        print("am ajuns aici", self.profile)
         self.delegate?.profileReloadData()
     }
     
