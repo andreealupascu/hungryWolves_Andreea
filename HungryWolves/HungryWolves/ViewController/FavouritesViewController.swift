@@ -25,29 +25,30 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
         tabelView.reloadData()
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int{
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection
-                   section: Int) -> Int{
+                   section: Int) -> Int {
         return self.favouritesViewModel.meals.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:
-                                                    "FavouritesCell", for: indexPath) as! FavouritesTableViewCell
+        let dequeuedCell = tabelView.dequeueReusableCell(withIdentifier: "FavouritesCell", for: indexPath)
+        guard let cell = dequeuedCell as? FavouritesTableViewCell else { return dequeuedCell }
         let meal =  self.favouritesViewModel.meals[indexPath.row]
         cell.showsReorderControl = true
         cell.updateFavouritesCell(with: meal)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
-    -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView,
+                   trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
             self.favouritesViewModel.removeFavouriteMeal(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .automatic);      completionHandler(true)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            completionHandler(true)
             FavouritesFileManager.saveToFile(meal: self.favouritesViewModel.meals)
         }
         deleteAction.backgroundColor = UIColor(red: 229, green: 229, blue: 229, a: 1)
@@ -62,7 +63,8 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "favouriteSegue" {
-            let destination = segue.destination as! MealDetailsViewController
+            let dequeuedSegue = segue.destination
+            guard let destination = dequeuedSegue as? MealDetailsViewController else { return }
             destination.mealID = sender as? String ?? ""
         }
     }

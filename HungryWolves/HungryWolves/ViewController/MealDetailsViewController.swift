@@ -48,7 +48,9 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
-        favoritesViewModel.saveFavouriteMeal(id: mealDetailViewModel.detailServer?.id ?? "", name: mealDetailViewModel.detailServer?.name ?? "", imgURL: mealDetailViewModel.detailServer?.imageURL ?? "")
+        favoritesViewModel.saveFavouriteMeal(id: mealDetailViewModel.detailServer?.id ?? "",
+                                             name: mealDetailViewModel.detailServer?.name ?? "",
+                                             imgURL: mealDetailViewModel.detailServer?.imageURL ?? "")
     }
     
     let mealDetailViewModel = MealDetailViewModel()

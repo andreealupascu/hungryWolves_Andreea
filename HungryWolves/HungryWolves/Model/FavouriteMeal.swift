@@ -7,10 +7,10 @@
 
 import Foundation
 
-class FavouriteMeal: Codable{
-    var id : String
-    var name : String
-    var imageURL : String
+class FavouriteMeal: Codable {
+    var id: String
+    var name: String
+    var imageURL: String
     
     init(id: String, name: String, imageURL: String) {
         self.id = id

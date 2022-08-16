@@ -36,7 +36,9 @@ class MealDetailViewModel {
                     self.detailsServer = details.all
                     self.detailServer = self.detailsServer[0]
                     if ((self.detailServer?.tags) != nil) {
-                        self.tagsArray = self.detailServer?.tags!.components(separatedBy: ",") ?? []
+                        let dequeuedDetailServer = self.detailServer?.tags
+                        guard let tagsArray = dequeuedDetailServer else { return }
+                        self.tagsArray = tagsArray.components(separatedBy: ",")
                     }
                     print(self.tagsArray)
                     self.delegate?.detailReloadData()
@@ -67,9 +69,13 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
     }
     func updateDetailMeal(with detail: Detail) {
         nameMealTextLabel.text = detail.name
-        let url = URL(string: self.mealDetailViewModel.detailServer?.imageURL ?? "")
+        let dequeuedURL = self.mealDetailViewModel.detailServer?.imageURL
+        guard let urlString = dequeuedURL else { return }
+        let url = URL(string: urlString)
+        let dequeuedURLYt = self.mealDetailViewModel.detailServer?.youtubeURL
+        guard let urlYtString = dequeuedURLYt else { return }
         thumbnailFirstImageView.kf.setImage(with: url)
-        let ytUrlString = "https://img.youtube.com/vi/" + saveIDYoutubeURL(url: self.mealDetailViewModel.detailServer!.youtubeURL) + "/default.jpg"
+        let ytUrlString = "https://img.youtube.com/vi/" + saveIDYoutubeURL(url: urlYtString) + "/default.jpg"
         let ytUrl = URL(string: ytUrlString)
         thumbnailSecondImageView.kf.setImage(with: ytUrl)
         measureFirstLabelText.text = detail.measureFirst

@@ -32,7 +32,6 @@ class FavouritesViewModel {
     
     func saveFavouriteMeal(id: String, name: String, imgURL: String) {
             let newMeal = FavouriteMeal(id: id, name: name, imageURL: imgURL)
-        print("fav meal", newMeal.id, newMeal.name)
             FavouritesFileManager.saveToFile(meal: newMeal)
         }
 }

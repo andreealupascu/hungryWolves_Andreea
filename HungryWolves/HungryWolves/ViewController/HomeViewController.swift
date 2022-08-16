@@ -32,7 +32,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             categoryCollectionView.collectionViewLayout = layout
         }
         self.homeViewModel.delegate = self
-        
     }
     
     @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {

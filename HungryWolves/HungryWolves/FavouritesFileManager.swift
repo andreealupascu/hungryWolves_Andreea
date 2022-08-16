@@ -9,7 +9,7 @@ import Foundation
 
 struct FavouritesFileManager {
     
-    static let archiveURL = FileManager.default.urls(
+    static let archiveURL = FileManager.default.urls (
         for: .documentDirectory,
         in: .userDomainMask).first?.appendingPathComponent("favouritesMeals")
         .appendingPathExtension("plist")
