@@ -13,7 +13,7 @@ struct Detail: Decodable {
     let imageURL: String
     let youtubeURL: String
     let instructions: String
-    let tags: String
+    let tags: String?
     let ingredientFirst: String
     let ingredientSecond: String
     let ingredientThird: String
@@ -38,6 +38,7 @@ struct Detail: Decodable {
 }
 
 extension Detail: DisplayableDetails {
+    
     var idMealLabelText: String {
         id
     }
@@ -50,7 +51,7 @@ extension Detail: DisplayableDetails {
         ("Instructions", instructions)
     }
     
-    var tagsLabelText: (label: String, value: String) {
+    var tagsLabelText: (label: String, value: String?) {
         ("Tags", tags)
     }
     

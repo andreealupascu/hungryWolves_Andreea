@@ -48,10 +48,14 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
+        favoritesViewModel.saveFavouriteMeal(id: mealDetailViewModel.detailServer?.id ?? "",
+                                             name: mealDetailViewModel.detailServer?.name ?? "",
+                                             imgURL: mealDetailViewModel.detailServer?.imageURL ?? "")
     }
     
     let mealDetailViewModel = MealDetailViewModel()
     let homeDetailViewModel = HomeViewModel()
+    let favoritesViewModel = FavouritesViewModel()
     var layoutTags: UICollectionViewLayout?
     var isFirstLoad: Bool = true
     var mealID = ""
@@ -62,6 +66,12 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         self.mealDetailViewModel.delegate = self
         if mealID != "" && isFirstLoad == true {
             self.mealDetailViewModel.detailMeal(idMeal: mealID)
+            for index in favoritesViewModel.meals{
+                if index.id == mealID {
+                    favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
+                    favoriteButton.isEnabled = false
+                }
+            }
             isFirstLoad = false
         }
     }
@@ -80,6 +90,6 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         tagCell.updateTagsCell(with: self.mealDetailViewModel.tagsArray[indexPath.item])
         return tagCell
     }
-
+    
 }
 
