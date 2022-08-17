@@ -53,7 +53,7 @@ extension SearchViewController {
         
         let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
+                widthDimension: .fractionalWidth(1.1),
                 heightDimension: .fractionalHeight(1)
             )
         )
@@ -98,6 +98,12 @@ extension SearchViewController {
         let meal = self.searchViewModel.mealsSearch[indexPath.item]
         cell.updateSearchCell(with: meal)
         cell.layer.cornerRadius = cell.frame.height / 8
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cell.layer.shadowRadius = 2
+        cell.layer.shouldRasterize = true
         itemNotFoundView.layer.opacity = 0.0
         if searchTextField.text == "" {
             foundMealsLabel.text = ""

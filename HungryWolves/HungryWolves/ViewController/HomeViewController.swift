@@ -20,7 +20,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let screenSize: CGRect = UIScreen.main.bounds
     let homeViewModel = HomeViewModel()
     var mealDetailCollectionView = MealDetailsViewController()
-    
+    private let notificationCenter = NotificationCenter.default
+
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutMeal = mealLayoutGenerate()
@@ -32,6 +33,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             categoryCollectionView.collectionViewLayout = layout
         }
         self.homeViewModel.delegate = self
+        
     }
     
     @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {

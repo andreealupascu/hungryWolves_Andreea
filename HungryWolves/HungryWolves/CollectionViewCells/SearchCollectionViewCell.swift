@@ -24,8 +24,8 @@ class SearchCollectionViewCell: UICollectionViewCell {
         if screenSize.width <= 400
         {
             searchImage.translatesAutoresizingMaskIntoConstraints = false
-            searchImage.heightAnchor.constraint(equalToConstant: 115).isActive = true
-            searchImage.widthAnchor.constraint(equalToConstant: 115).isActive = true
+            searchImage.heightAnchor.constraint(equalToConstant: 130).isActive = true
+            searchImage.widthAnchor.constraint(equalToConstant: 130).isActive = true
         }
         let url = URL(string: meal.imageURL)
         searchImage.kf.setImage(with: url)

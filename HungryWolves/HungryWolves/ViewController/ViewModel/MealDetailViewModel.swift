@@ -78,6 +78,7 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         let ytUrlString = "https://img.youtube.com/vi/" + saveIDYoutubeURL(url: urlYtString) + "/default.jpg"
         let ytUrl = URL(string: ytUrlString)
         thumbnailSecondImageView.kf.setImage(with: ytUrl)
+        thumbnailSecondImageView.clipsToBounds = true
         measureFirstLabelText.text = detail.measureFirst
         measureSecondLabelText.text = detail.measureSecond
         measureThirdLabelText.text = detail.measureThird

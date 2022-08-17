@@ -19,6 +19,12 @@ class FavouritesTableViewCell: UITableViewCell {
         mealImageView.kf.setImage(with: url)
         mealImageView.layer.cornerRadius = mealImageView.frame.width / 2
         cellBackgroundView.layer.cornerRadius = cellBackgroundView.frame.height / 4
+        cellBackgroundView.layer.masksToBounds = false
+        cellBackgroundView.layer.shadowColor = UIColor.gray.cgColor
+        cellBackgroundView.layer.shadowOpacity = 0.2
+        cellBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cellBackgroundView.layer.shadowRadius = 2
+        cellBackgroundView.layer.shouldRasterize = true
     }
     
 
