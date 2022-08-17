@@ -17,7 +17,7 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tabelView.reloadData()
+        super.viewDidAppear(true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
