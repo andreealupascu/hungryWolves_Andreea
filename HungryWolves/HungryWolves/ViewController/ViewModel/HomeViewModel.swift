@@ -56,7 +56,6 @@ class HomeViewModel {
     func categorySelected(categoryType: String) {
         
         fetchMeal(categoryType: categoryType)
-        print(Notification.Name.homeScreenCategory)
     }
     
     @objc func reloadHomeScreen(_ notification: Notification) {

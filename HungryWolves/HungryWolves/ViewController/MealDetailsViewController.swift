@@ -47,10 +47,18 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
-        favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
-        favoritesViewModel.saveFavouriteMeal(id: mealDetailViewModel.detailServer?.id ?? "",
-                                             name: mealDetailViewModel.detailServer?.name ?? "",
-                                             imgURL: mealDetailViewModel.detailServer?.imageURL ?? "")
+        if isFavourite == false
+        {
+            favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
+            favoritesViewModel.saveFavouriteMeal(id: mealDetailViewModel.detailServer?.id ?? "",
+                                                 name: mealDetailViewModel.detailServer?.name ?? "",
+                                                 imgURL: mealDetailViewModel.detailServer?.imageURL ?? "")
+        } else {
+            favoriteButton.setImage(UIImage(systemName: "suit.heart"), for: .normal)
+            favoritesViewModel.removeFavouriteMeal(at: indexMeal)
+            FavouritesFileManager.saveToFile(meal: self.favoritesViewModel.meals)
+        }
+       
     }
     
     let mealDetailViewModel = MealDetailViewModel()
@@ -59,6 +67,9 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     var layoutTags: UICollectionViewLayout?
     var isFirstLoad: Bool = true
     var mealID = ""
+    var isFavourite: Bool = false
+    var indexMeal: Int = -1
+    var indexMealBuff = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +80,10 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
             for index in favoritesViewModel.meals{
                 if index.id == mealID {
                     favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
-                    favoriteButton.isEnabled = false
+                    isFavourite = true
+                    indexMeal = indexMealBuff
                 }
+                indexMealBuff = indexMealBuff + 1
             }
             isFirstLoad = false
         }

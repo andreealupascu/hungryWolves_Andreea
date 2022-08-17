@@ -40,7 +40,6 @@ class MealDetailViewModel {
                         guard let tagsArray = dequeuedDetailServer else { return }
                         self.tagsArray = tagsArray.components(separatedBy: ",")
                     }
-                    print(self.tagsArray)
                     self.delegate?.detailReloadData()
                     self.delegate?.tagsReloadData()
                     guard let details = self.detailServer else { return }
@@ -94,7 +93,6 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         guard let index = url.range(of: "=")?.upperBound else { return "" }
         let substring = url.suffix(from: index)
         let string = String(substring)
-        print(string)
         return string
     }
     
