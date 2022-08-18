@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H4U-uF-ol8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hlM-YZ-QzE">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -365,6 +366,7 @@ food for you</string>
                     </view>
                     <navigationItem key="navigationItem" id="u5A-Oh-gJV"/>
                     <connections>
+                        <outlet property="deleteInstructionsView" destination="iL2-8s-oDE" id="13E-NX-42q"/>
                         <outlet property="tabelView" destination="3Xo-iA-lUq" id="fae-cX-UiQ"/>
                         <segue destination="4C5-j9-jk7" kind="show" identifier="favouriteSegue" animates="NO" id="7Ev-l7-epk"/>
                     </connections>
@@ -685,20 +687,21 @@ food for you</string>
                                     <size key="itemSize" width="156" height="212"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="9" minY="10" maxX="0.0" maxY="10"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCell" id="hIN-Yo-C69" customClass="SearchCollectionViewCell" customModule="HungryWolves" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="212"/>
+                                        <rect key="frame" x="9" y="10" width="156" height="212"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="SkP-lC-PWg">
                                             <rect key="frame" x="0.0" y="0.0" width="156" height="212"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-9K-Gv9">
-                                                    <rect key="frame" x="10" y="8" width="136" height="135"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ueX-9K-Gv9">
+                                                    <rect key="frame" x="10" y="8" width="136" height="130"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="135" id="NO1-Q6-lHF"/>
+                                                        <constraint firstAttribute="height" constant="130" id="NO1-Q6-lHF"/>
+                                                        <constraint firstAttribute="width" constant="130" id="TUv-iU-yaX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRn-gf-nHo">
@@ -1161,27 +1164,156 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
             </objects>
             <point key="canvasLocation" x="4299.532710280374" y="837.79697624190067"/>
         </scene>
-        <!--NetworkView-->
-        <scene sceneID="bwZ-cv-lAK">
+        <!--Login View Controller-->
+        <scene sceneID="Gmh-KO-8yX">
             <objects>
-                <viewController storyboardIdentifier="destinationVC" id="5kS-fK-4b4" userLabel="NetworkView" customClass="InternetConnectionViewController" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="destinationVC" id="koU-2K-Gib">
+                <viewController id="hlM-YZ-QzE" userLabel="Login View Controller" customClass="LoginViewController" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WAG-lp-hYs">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="I6W-S6-7wo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kes-FS-Hnz">
+                                <rect key="frame" x="64" y="417" width="300" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1vY-fs-phD"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartQuotesType="no" textContentType="email"/>
+                                <connections>
+                                    <action selector="emailAction:" destination="hlM-YZ-QzE" eventType="editingDidEnd" id="bCa-Kc-hZG"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5aF-Hh-PJH">
+                                <rect key="frame" x="64" y="512" width="300" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YyG-cb-9il"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartQuotesType="no" textContentType="password"/>
+                                <connections>
+                                    <action selector="passwordAction:" destination="hlM-YZ-QzE" eventType="editingDidEnd" id="25X-qd-tVA"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5YJ-sZ-rjQ">
+                                <rect key="frame" x="65" y="94.000000000000014" width="298" height="144.33333333333337"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Welcome at Hungry Wolves!">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98039215686274506" green="0.29019607843137252" blue="0.047058823529411764" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="32" name="ArialRoundedMTBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2p8-qJ-7QW">
+                                <rect key="frame" x="65" y="268.33333333333331" width="298" height="32.666666666666686"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Login first">
+                                        <attributes>
+                                            <color key="NSColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="28" name="ArialRoundedMTBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbm-Ds-q1b">
+                                <rect key="frame" x="64" y="642" width="300" height="50"/>
+                                <color key="backgroundColor" red="0.98039215690000003" green="0.2901960784" blue="0.047058823530000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QeC-Tn-Rdc"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Login">
+                                            <attributes>
+                                                <font key="NSFont" size="20" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="hlM-YZ-QzE" eventType="touchUpInside" id="Io2-SP-ijP"/>
+                                    <segue destination="H4U-uF-ol8" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="a2i-dx-4xX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grk-tG-Ske">
+                                <rect key="frame" x="65" y="332" width="298" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="trk-ab-4jc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" name="Font"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MFa-I4-Cgg"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="Sbm-Ds-q1b" firstAttribute="top" secondItem="5aF-Hh-PJH" secondAttribute="bottom" constant="80" id="8Fp-jR-SC8"/>
+                            <constraint firstItem="Sbm-Ds-q1b" firstAttribute="leading" secondItem="MFa-I4-Cgg" secondAttribute="leading" constant="64" id="8Mz-1K-kVn"/>
+                            <constraint firstItem="5aF-Hh-PJH" firstAttribute="top" secondItem="kes-FS-Hnz" secondAttribute="bottom" constant="45" id="8gO-2W-IjU"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="trailing" secondItem="5YJ-sZ-rjQ" secondAttribute="trailing" constant="65" id="C6J-wA-qD8"/>
+                            <constraint firstItem="Sbm-Ds-q1b" firstAttribute="top" secondItem="5aF-Hh-PJH" secondAttribute="bottom" constant="80" id="CKz-R6-P5R"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="trailing" secondItem="Grk-tG-Ske" secondAttribute="trailing" constant="65" id="DKT-hm-SkC"/>
+                            <constraint firstItem="Grk-tG-Ske" firstAttribute="leading" secondItem="MFa-I4-Cgg" secondAttribute="leading" constant="65" id="DSc-Vg-hiu"/>
+                            <constraint firstItem="Grk-tG-Ske" firstAttribute="top" secondItem="2p8-qJ-7QW" secondAttribute="bottom" constant="31" id="Elf-cE-gvz"/>
+                            <constraint firstItem="kes-FS-Hnz" firstAttribute="top" secondItem="Grk-tG-Ske" secondAttribute="bottom" constant="45" id="L2y-a2-xoQ"/>
+                            <constraint firstItem="kes-FS-Hnz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2p8-qJ-7QW" secondAttribute="bottom" constant="40" id="NAs-K2-fd9"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="trailing" secondItem="2p8-qJ-7QW" secondAttribute="trailing" constant="65" id="RVm-Cp-TTa"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="bottom" secondItem="Sbm-Ds-q1b" secondAttribute="bottom" priority="500" constant="200" id="W5h-b6-Fjn"/>
+                            <constraint firstItem="5aF-Hh-PJH" firstAttribute="leading" secondItem="MFa-I4-Cgg" secondAttribute="leading" constant="64" id="aE0-uU-5Lq"/>
+                            <constraint firstItem="5aF-Hh-PJH" firstAttribute="top" secondItem="kes-FS-Hnz" secondAttribute="bottom" constant="45" id="bwb-qd-5Tr"/>
+                            <constraint firstItem="2p8-qJ-7QW" firstAttribute="top" relation="lessThanOrEqual" secondItem="5YJ-sZ-rjQ" secondAttribute="bottom" constant="30" id="fdG-qO-F0K"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="trailing" secondItem="Sbm-Ds-q1b" secondAttribute="trailing" constant="64" id="fqB-y0-CMT"/>
+                            <constraint firstItem="2p8-qJ-7QW" firstAttribute="top" secondItem="5YJ-sZ-rjQ" secondAttribute="bottom" priority="500" constant="40" id="hd5-bZ-v5w"/>
+                            <constraint firstItem="5YJ-sZ-rjQ" firstAttribute="leading" secondItem="MFa-I4-Cgg" secondAttribute="leading" constant="65" id="ieB-m6-cQQ"/>
+                            <constraint firstItem="kes-FS-Hnz" firstAttribute="top" secondItem="2p8-qJ-7QW" secondAttribute="bottom" priority="500" constant="100" id="kfd-ny-QJn"/>
+                            <constraint firstItem="kes-FS-Hnz" firstAttribute="leading" secondItem="MFa-I4-Cgg" secondAttribute="leading" constant="64" id="oy7-lx-JXp"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="trailing" secondItem="kes-FS-Hnz" secondAttribute="trailing" constant="64" id="poh-yO-sl6"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Sbm-Ds-q1b" secondAttribute="bottom" constant="30" id="qbz-gT-oNk"/>
+                            <constraint firstItem="2p8-qJ-7QW" firstAttribute="leading" secondItem="MFa-I4-Cgg" secondAttribute="leading" constant="65" id="t3Z-qS-pgW"/>
+                            <constraint firstItem="5YJ-sZ-rjQ" firstAttribute="top" relation="lessThanOrEqual" secondItem="MFa-I4-Cgg" secondAttribute="top" priority="500" constant="100" id="tg6-5P-YOy"/>
+                            <constraint firstItem="5YJ-sZ-rjQ" firstAttribute="top" secondItem="MFa-I4-Cgg" secondAttribute="top" constant="50" id="yFQ-Ua-JCD"/>
+                            <constraint firstItem="MFa-I4-Cgg" firstAttribute="trailing" secondItem="5aF-Hh-PJH" secondAttribute="trailing" constant="64" id="za1-EG-xm7"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4Dp-8l-TbU"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="kes-FS-Hnz" id="71v-bu-KwZ"/>
+                        <outlet property="errorMessageLabel" destination="Grk-tG-Ske" id="tDy-hb-UnD"/>
+                        <outlet property="loginButton" destination="Sbm-Ds-q1b" id="53f-rz-Nbl"/>
+                        <outlet property="passwordTextField" destination="5aF-Hh-PJH" id="Kd5-ws-fjs"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rKg-s2-pxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ja8-s7-f8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1528" y="838"/>
+            <point key="canvasLocation" x="-1173.3644859813082" y="60.90712742980562"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="g3D-NO-x0z">
+            <objects>
+                <hostingController restorationIdentifier="noInternetViewHost" storyboardIdentifier="noInternetViewHost" id="VF1-eO-fh5" customClass="InternetVHC" customModule="HungryWolves" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dAw-6a-7FY"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93Z-er-TVB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1688" y="838"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="57A-d9-HMD">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="H4U-uF-ol8" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nLT-qh-06b"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wra-88-6TU">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1337,7 +1469,7 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yBH-JC-fqd"/>
+        <segue reference="g3y-KJ-6Ak"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
@@ -1354,6 +1486,12 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
         <image name="suit.heart" catalog="system" width="128" height="109"/>
         <image name="suit.heart.fill" catalog="system" width="128" height="109"/>
         <image name="swipe" width="60" height="60"/>
+        <namedColor name="Background">
+            <color red="0.89800000190734863" green="0.89800000190734863" blue="0.89800000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Font">
+            <color red="0.90600001811981201" green="0.3449999988079071" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

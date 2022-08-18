@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import Kingfisher
+import SwiftUI
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -20,8 +21,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let screenSize: CGRect = UIScreen.main.bounds
     let homeViewModel = HomeViewModel()
     var mealDetailCollectionView = MealDetailsViewController()
-    private let notificationCenter = NotificationCenter.default
-
+    let indexPos = IndexPath(row: 0, section: 0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutMeal = mealLayoutGenerate()
@@ -33,7 +34,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             categoryCollectionView.collectionViewLayout = layout
         }
         self.homeViewModel.delegate = self
-        
     }
     
     @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
@@ -51,7 +51,7 @@ extension HomeViewController {
         
         if screenSize.width <= 400 {
             heightScreenPercent = 0.4
-            widthScreenPercent = 0.5
+            widthScreenPercent = 0.54
         }
         
         let item = NSCollectionLayoutItem(
@@ -127,7 +127,6 @@ extension HomeViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == categoryCollectionView {
             return self.homeViewModel.categoriesServer.count
@@ -140,19 +139,9 @@ extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == categoryCollectionView {
             let categoryCell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
+            
             let category = self.homeViewModel.categoriesServer[indexPath.item]
             categoryCell.updateCategoriesCell(with: category)
-            
-            if indexPath.section == 0 && indexPath.row == 0 && isFirstLoad == true {
-                categoryCell.categoryLabelText.textColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
-                categoryCell.lineImageView.backgroundColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
-                categoryCell.isSelected = true
-                isFirstLoad = false
-            } else {
-                categoryCell.categoryLabelText.textColor = UIColor(red: 154, green: 154, blue: 157, a: 1)
-                categoryCell.lineImageView.backgroundColor  = UIColor(red: 229, green: 229, blue: 229, a: 1)
-                categoryCell.isSelected = false
-            }
             return categoryCell
             
         } else {
@@ -166,24 +155,18 @@ extension HomeViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == categoryCollectionView {
             if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell {
-                cell.categoryLabelText.textColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
-                cell.lineImageView.backgroundColor = UIColor(red: 250, green: 74, blue: 12, a: 1)
                 self.homeViewModel.categorySelected(categoryType: cell.categoryLabelText.text ?? "" )
             }
         }
         if collectionView == mealCollectionView {
+            print(self.homeViewModel.mealsServer[indexPath.item].id)
             performSegue(withIdentifier: "idDetailsSegue", sender:
                             self.homeViewModel.mealsServer[indexPath.item].id)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        if collectionView == categoryCollectionView {
-            if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell {
-                cell.categoryLabelText.textColor = UIColor(red: 154, green: 154, blue: 157, a: 1)
-                cell.lineImageView.backgroundColor  = UIColor(red: 229, green: 229, blue: 229, a: 1)
-            }
-        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -192,5 +175,15 @@ extension HomeViewController {
             destination.mealID = sender as? String ?? ""
         }
     }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func mealReloadData() {
+        self.mealCollectionView.reloadData()
+    }
     
+    func categoryReloadData() {
+        self.categoryCollectionView.reloadData()
+        categoryCollectionView.selectItem(at: indexPos, animated: false, scrollPosition: [])
+    }
 }

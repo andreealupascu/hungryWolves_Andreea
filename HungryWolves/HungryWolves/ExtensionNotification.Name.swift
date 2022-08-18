@@ -9,4 +9,5 @@ import Foundation
 
 extension Notification.Name {
     static let homeScreenMeal = Notification.Name("homeScreen")
+    static let searchScreen = Notification.Name("searchScreen")
 }

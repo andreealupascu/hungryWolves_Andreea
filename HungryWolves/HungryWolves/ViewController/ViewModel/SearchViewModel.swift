@@ -20,6 +20,9 @@ class SearchViewModel {
     
     init() {
         self.fetchSearchMeal(searchType: "")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadHomeScreen(_:)),
+                                               name: .searchScreen, object: nil)
     }
     
     private func fetchSearchMeal(searchType: String) {
@@ -43,10 +46,13 @@ class SearchViewModel {
     func searchMeal(searchType: String) {
         fetchSearchMeal(searchType: searchType)
     }
-}
-
-extension SearchViewController: SearchViewModelDelegate {
-    func searchReloadData() {
-        self.searchCollectionView.reloadData()
+    
+    @objc func reloadHomeScreen(_ notification: Notification) {
+       fetchSearchMeal(searchType: "")
+    }
+    
+    deinit {
+        Foundation.NotificationCenter.default.removeObserver(self,
+                                                             name: .searchScreen, object: nil)
     }
 }

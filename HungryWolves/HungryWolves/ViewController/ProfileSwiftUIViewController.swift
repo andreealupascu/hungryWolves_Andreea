@@ -16,14 +16,12 @@ class ProfileSwiftUIViewController: UIViewController{
     
     func favouriteButtonPressedVC() {
         tabBarController?.selectedIndex = 1
-        print( "Fav button")
     }
     
     func termsAndConditionButtonTapped() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "webView") as! WebViewController
         self.present(nextViewController, animated:true, completion:nil)
-        print("terms press")
     }
     
     override func viewDidLoad() {
@@ -45,4 +43,11 @@ class ProfileSwiftUIViewController: UIViewController{
         
     }
     
+}
+
+extension ProfileSwiftUIViewController: ProfileSwiftUIViewModelDelegate {
+    func profileReloadData() {
+        print("reload")
+        self.viewDidLoad()
+    }
 }

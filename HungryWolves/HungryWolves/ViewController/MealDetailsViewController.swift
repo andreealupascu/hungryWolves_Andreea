@@ -47,16 +47,32 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        var indexMealR = -1
+        var indexMealBuffR = 0
+        favoritesViewModel.loadFavouriteMeal()
+        for index in favoritesViewModel.meals{
+            if index.id == mealID {
+                indexMealR = indexMealBuffR
+            }
+            indexMealBuffR = indexMealBuffR + 1
+        }
+                
         if isFavourite == false
         {
             favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
             favoritesViewModel.saveFavouriteMeal(id: mealDetailViewModel.detailServer?.id ?? "",
                                                  name: mealDetailViewModel.detailServer?.name ?? "",
                                                  imgURL: mealDetailViewModel.detailServer?.imageURL ?? "")
+            indexMealR = indexMealBuffR
+            indexMealBuffR = indexMealBuffR + 1
+            isFavourite = true
         } else {
             favoriteButton.setImage(UIImage(systemName: "suit.heart"), for: .normal)
-            favoritesViewModel.removeFavouriteMeal(at: indexMeal)
+            favoritesViewModel.removeFavouriteMeal(at: indexMealR)
+            indexMealBuffR = indexMealBuffR - 1
+            indexMealR = indexMealR - 1
             FavouritesFileManager.saveToFile(meal: self.favoritesViewModel.meals)
+            isFavourite = false
         }
        
     }
@@ -68,8 +84,6 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     var isFirstLoad: Bool = true
     var mealID = ""
     var isFavourite: Bool = false
-    var indexMeal: Int = -1
-    var indexMealBuff = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,9 +95,7 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
                 if index.id == mealID {
                     favoriteButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
                     isFavourite = true
-                    indexMeal = indexMealBuff
                 }
-                indexMealBuff = indexMealBuff + 1
             }
             isFirstLoad = false
         }

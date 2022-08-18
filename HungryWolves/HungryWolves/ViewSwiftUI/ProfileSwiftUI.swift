@@ -26,6 +26,7 @@ struct ProfileSwiftUI: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .frame(width: 350.0, height: 50.0, alignment: .leading)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                 
                 
                 HStack{
@@ -38,12 +39,14 @@ struct ProfileSwiftUI: View {
                     VStack (alignment: .leading, spacing: 5){
                         Text(profileViewModel.profile.name ?? "")
                             .font(.title2)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                         Text(profileViewModel.profile.email ?? "")
                             .lineLimit(0)
                             .font(.body)
                             .foregroundColor(Color.gray)
                         Rectangle().frame(width: 150, height: 1, alignment: .leading)
                             .padding(.vertical, 5.0)
+                            .foregroundColor(Color.gray)
                         Text(profileViewModel.profile.phone ?? "")
                             .lineLimit(0)
                             .font(.body)
@@ -59,6 +62,7 @@ struct ProfileSwiftUI: View {
                 HStack{
                     Text("Favourites")
                         .padding()
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
                     Spacer()
                     Button (action: {
                         favoriteButtonPressed()
@@ -76,6 +80,8 @@ struct ProfileSwiftUI: View {
                 HStack{
                     Text("Terms and conditions")
                         .padding()
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.black/*@END_MENU_TOKEN@*/)
+                        
                     Spacer()
                     Button (action: {
                         termsAndConditionPressed()
@@ -108,6 +114,3 @@ struct ProfileSwiftUI_Previews: PreviewProvider {
     }
 }
 
-extension NSNotification.Name {
-    static let tapViewTapped = NSNotification.Name("tapViewTapped")
-}

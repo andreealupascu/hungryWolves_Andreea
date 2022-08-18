@@ -59,3 +59,10 @@ class ProfileViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
     }
 
 }
+
+extension ProfileViewController: ProfileViewModelDelegate {
+    func profileReloadData() {
+        print("reload")
+        self.viewDidLoad()
+    }
+}

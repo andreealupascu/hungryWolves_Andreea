@@ -37,6 +37,8 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.searchViewModel.delegate = self
         self.searchViewModel.searchMeal(searchType: searchTextField.text ?? "")
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
     }
 }
 
@@ -59,7 +61,7 @@ extension SearchViewController {
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .absolute(156 * setWidthPercent),
+                widthDimension: .absolute(150 * setWidthPercent),
                 heightDimension: .absolute(212)
             ),
             subitem: item,
@@ -123,5 +125,11 @@ extension SearchViewController {
             destination.mealID = sender as? String ?? ""
             print(destination.mealID)
         }
+    }
+}
+
+extension SearchViewController: SearchViewModelDelegate {
+    func searchReloadData() {
+        self.searchCollectionView.reloadData()
     }
 }

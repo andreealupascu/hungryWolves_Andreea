@@ -11,6 +11,8 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet weak var tabelView: UITableView!
     
+    @IBOutlet weak var deleteInstructionsView: UIStackView!
+    
     var favouritesViewModel = FavouritesViewModel()
     
     var meal: FavouriteMeal?
@@ -22,6 +24,11 @@ class FavouritesViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidAppear(_ animated: Bool) {
         favouritesViewModel.loadFavouriteMeal()
+        if self.favouritesViewModel.meals.count == 0 {
+            deleteInstructionsView.layer.opacity = 0.0
+        } else {
+            deleteInstructionsView.layer.opacity = 1.0
+        }
         tabelView.reloadData()
     }
     

@@ -12,8 +12,6 @@ import Alamofire
 class NetworkConnection {
     static let shared = NetworkConnection()
     let reachabilityManager = NetworkReachabilityManager(host: "www.google.com")
-    let offlineNoInternetView = InternetConnectionViewController()
-    let homeViewModel = HomeViewModel()
     
     let keyWindow = UIApplication.shared.connectedScenes
         .filter({$0.activationState == .foregroundActive})
@@ -37,14 +35,40 @@ class NetworkConnection {
     }
     
     func showOfflineAlert() {
-        let rootViewController = UIApplication.shared.windows.first?.rootViewController
-        rootViewController?.present(offlineNoInternetView, animated: true, completion: nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let noInternetViewHostIdentifier = "noInternetViewHost"
+        let offlineInternetVHC = storyBoard.instantiateViewController(withIdentifier: noInternetViewHostIdentifier) as! InternetVHC
+        let rootViewController = UIApplication.shared.windows.first?.topViewController()
+        print(rootViewController?.classForCoder)
+        rootViewController?.present(offlineInternetVHC, animated: true, completion: nil)
+
     }
     
     func dismissOfflineAlert() {
-        let rootViewController = UIApplication.shared.windows.first?.rootViewController
+        let rootViewController = UIApplication.shared.windows.first?.topViewController()
         rootViewController?.dismiss(animated: true, completion: nil)
+        
         NotificationCenter.default.post(name: .homeScreenMeal, object: nil)
+        NotificationCenter.default.post(name: .searchScreen, object: nil)
     }
+
+     
 }
 
+extension UIWindow {
+    func topViewController() -> UIViewController? {
+        var top = self.rootViewController
+        while true {
+            if let presented = top?.presentedViewController {
+                top = presented
+            } else if let nav = top as? UINavigationController {
+                top = nav.visibleViewController
+            } else if let tab = top as? UITabBarController {
+                top = tab.selectedViewController
+            } else {
+                break
+            }
+        }
+        return top
+    }
+}

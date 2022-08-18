@@ -65,15 +65,8 @@ class HomeViewModel {
     
     deinit {
         Foundation.NotificationCenter.default.removeObserver(self,
-                                                             name: .homeScreenMeal, object: nil) }
+                                                             name: .homeScreenMeal, object: nil)
+    }
 }
 
-extension HomeViewController: HomeViewModelDelegate {
-    func mealReloadData() {
-        self.mealCollectionView.reloadData()
-    }
-    
-    func categoryReloadData() {
-        self.categoryCollectionView.reloadData()
-    }
-}
+

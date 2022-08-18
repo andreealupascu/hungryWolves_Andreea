@@ -21,12 +21,14 @@ class SearchCollectionViewCell: UICollectionViewCell {
         searchImage.layer.shadowOpacity = 0.2;
         searchImage.layer.shadowOffset = CGSize(width: 0, height: 3)
         searchImage.layer.shadowRadius = 2
+        searchImage.layer.borderWidth = 2
+        searchImage.layer.borderColor = UIColor(named: "Border")?.cgColor
         if screenSize.width <= 400
         {
-            searchImage.translatesAutoresizingMaskIntoConstraints = false
-            searchImage.heightAnchor.constraint(equalToConstant: 130).isActive = true
-            searchImage.widthAnchor.constraint(equalToConstant: 130).isActive = true
+            searchImage.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            searchImage.widthAnchor.constraint(equalToConstant: 120).isActive = true
         }
+        
         let url = URL(string: meal.imageURL)
         searchImage.kf.setImage(with: url)
     }

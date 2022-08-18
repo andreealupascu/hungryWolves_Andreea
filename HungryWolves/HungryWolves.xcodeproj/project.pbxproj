@@ -10,6 +10,8 @@
 		C104D5A328ABE25200919E76 /* ExtensionNotification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104D5A228ABE25200919E76 /* ExtensionNotification.Name.swift */; };
 		C104D5A528AC241F00919E76 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104D5A428AC241F00919E76 /* WebViewController.swift */; };
 		C104D5A728AC296B00919E76 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = C104D5A628AC296B00919E76 /* Slide.xib */; };
+		C111104928AE2FB20099CDDD /* InternetVHC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111104828AE2FB20099CDDD /* InternetVHC.swift */; };
+		C111104B28AE396E0099CDDD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111104A28AE396E0099CDDD /* LoginViewController.swift */; };
 		C133493628A101170080DD1B /* TagDetailMealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */; };
 		C1428B45289BD89200D03496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1428B44289BD89200D03496 /* Constants.swift */; };
 		C14FD2A828AACD5400CAA8F8 /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14FD2A728AACD5400CAA8F8 /* NoInternetView.swift */; };
@@ -30,7 +32,6 @@
 		C1B0607D2896E0B600621E84 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */; };
 		C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B060B02896EAE300621E84 /* MealCollectionViewCell.swift */; };
 		C1D3310A28AB7A5A00620A7A /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3310928AB7A5A00620A7A /* NetworkConnection.swift */; };
-		C1D3310E28AB86FF00620A7A /* InternetConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3310D28AB86FF00620A7A /* InternetConnectionViewController.swift */; };
 		C1D3311328ABA80800620A7A /* ProfileSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3311228ABA80800620A7A /* ProfileSwiftUI.swift */; };
 		C1D3311528ABB70C00620A7A /* ProfileSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3311428ABB70C00620A7A /* ProfileSwiftUIViewController.swift */; };
 		C1D3EF6B289D116500D3B46E /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */; };
@@ -56,6 +57,8 @@
 		C104D5A228ABE25200919E76 /* ExtensionNotification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotification.Name.swift; sourceTree = "<group>"; };
 		C104D5A428AC241F00919E76 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C104D5A628AC296B00919E76 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		C111104828AE2FB20099CDDD /* InternetVHC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetVHC.swift; sourceTree = "<group>"; };
+		C111104A28AE396E0099CDDD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailMealCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1428B44289BD89200D03496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C14FD2A728AACD5400CAA8F8 /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
@@ -76,7 +79,6 @@
 		C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B060B02896EAE300621E84 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1D3310928AB7A5A00620A7A /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		C1D3310D28AB86FF00620A7A /* InternetConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionViewController.swift; sourceTree = "<group>"; };
 		C1D3311228ABA80800620A7A /* ProfileSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwiftUI.swift; sourceTree = "<group>"; };
 		C1D3311428ABB70C00620A7A /* ProfileSwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwiftUIViewController.swift; sourceTree = "<group>"; };
 		C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
@@ -142,14 +144,15 @@
 		C1B0607A2896CFE100621E84 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C111104A28AE396E0099CDDD /* LoginViewController.swift */,
 				C1EFEFB528954EBF00CB0A58 /* HomeViewController.swift */,
 				C1795BEE2897F3EC004EC6EE /* SearchViewController.swift */,
 				C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */,
 				C19E328F28A272C100B68CD1 /* ProfileViewController.swift */,
 				C1F8C3C028A393FC00D231A6 /* FavouritesViewController.swift */,
-				C1D3310D28AB86FF00620A7A /* InternetConnectionViewController.swift */,
 				C1D3311428ABB70C00620A7A /* ProfileSwiftUIViewController.swift */,
 				C104D5A428AC241F00919E76 /* WebViewController.swift */,
+				C111104828AE2FB20099CDDD /* InternetVHC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				C1D3EF6B289D116500D3B46E /* MealDetailsViewController.swift in Sources */,
 				C18C9F2B289938C200540043 /* ExtensionUIDevice.swift in Sources */,
 				C1F8C3C728A3999200D231A6 /* FavouritesFileManager.swift in Sources */,
+				C111104928AE2FB20099CDDD /* InternetVHC.swift in Sources */,
 				C1F8C3C928A3CA5B00D231A6 /* FavouriteMeal.swift in Sources */,
 				C1D3EF6E289D3E4600D3B46E /* Detail.swift in Sources */,
 				C1795BEF2897F3EC004EC6EE /* SearchViewController.swift in Sources */,
@@ -320,6 +324,7 @@
 				C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */,
 				C14FD2A828AACD5400CAA8F8 /* NoInternetView.swift in Sources */,
 				C19E329428A2742B00B68CD1 /* ProfileViewModel.swift in Sources */,
+				C111104B28AE396E0099CDDD /* LoginViewController.swift in Sources */,
 				C18C9F292898F22F00540043 /* HomeViewModel.swift in Sources */,
 				C19E329028A272C100B68CD1 /* ProfileViewController.swift in Sources */,
 				C1D3310A28AB7A5A00620A7A /* NetworkConnection.swift in Sources */,
@@ -332,7 +337,6 @@
 				C133493628A101170080DD1B /* TagDetailMealCollectionViewCell.swift in Sources */,
 				C1D3311528ABB70C00620A7A /* ProfileSwiftUIViewController.swift in Sources */,
 				C1B060732896BFDD00621E84 /* Protocols.swift in Sources */,
-				C1D3310E28AB86FF00620A7A /* InternetConnectionViewController.swift in Sources */,
 				C1EFEFB428954EBF00CB0A58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +490,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -514,6 +519,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -78,6 +78,12 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         let ytUrl = URL(string: ytUrlString)
         thumbnailSecondImageView.kf.setImage(with: ytUrl)
         thumbnailSecondImageView.clipsToBounds = true
+        thumbnailFirstImageView.layer.cornerRadius = thumbnailFirstImageView.frame.width / 2
+        thumbnailSecondImageView.layer.cornerRadius = thumbnailSecondImageView.frame.width / 2
+        thumbnailFirstImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
+        thumbnailFirstImageView.layer.borderWidth = 2
+        thumbnailSecondImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
+        thumbnailSecondImageView.layer.borderWidth = 2
         measureFirstLabelText.text = detail.measureFirst
         measureSecondLabelText.text = detail.measureSecond
         measureThirdLabelText.text = detail.measureThird
@@ -85,14 +91,14 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         ingredientSecondLabelText.text = detail.ingredientSecond
         ingredientThirdLabelText.text = detail.ingredientThird
         instructionsLabelText.text = detail.instructions
-        thumbnailFirstImageView.layer.cornerRadius = thumbnailFirstImageView.frame.width / 2
-        thumbnailSecondImageView.layer.cornerRadius = thumbnailSecondImageView.frame.width / 2
+        
     }
-    
+
     func saveIDYoutubeURL(url: String) -> String {
         guard let index = url.range(of: "=")?.upperBound else { return "" }
         let substring = url.suffix(from: index)
         let string = String(substring)
+        print(string)
         return string
     }
     
