@@ -35,8 +35,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         view.addSubview(loadingIndicator)
         loadingIndicator.startAnimating()
         loadingIndicator.hidesWhenStopped = true
-       // let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-       // view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,7 +102,6 @@ extension SearchViewController {
         } else {
             itemNotFoundView.layer.opacity = 0.0
         }
-        
         return self.searchViewModel.mealsSearch.count
     }
     
@@ -121,7 +118,7 @@ extension SearchViewController {
         cell.layer.shouldRasterize = true
         itemNotFoundView.layer.opacity = 0.0
         if searchTextField.text == "" {
-            foundMealsLabel.text = ""
+            foundMealsLabel.text = "Try to find something"
         } else {
             foundMealsLabel.text = "Found \(self.searchViewModel.mealsSearch.count) results"
         }

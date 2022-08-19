@@ -44,7 +44,8 @@ class SearchViewModel {
     }
     
     func searchMeal(searchType: String) {
-        fetchSearchMeal(searchType: searchType)
+        let searchTypeR = searchType.replacingOccurrences(of: " ", with: "%20")
+        fetchSearchMeal(searchType: searchTypeR)
     }
     
     @objc func reloadSearchScreen(_ notification: Notification) {

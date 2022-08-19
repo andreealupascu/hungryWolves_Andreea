@@ -132,6 +132,7 @@ extension HomeViewController {
             trailing: 0
         )
         section.orthogonalScrollingBehavior = .groupPaging
+        
         return UICollectionViewCompositionalLayout(section: section)
     }
     

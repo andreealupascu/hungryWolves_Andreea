@@ -29,6 +29,8 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var tagsCollectionView: UICollectionView!
     @IBOutlet weak var imagePageControl: UIPageControl!
     @IBOutlet weak var imageScrollView: UIScrollView!
+    @IBOutlet weak var instructionTitleLabel: UILabel!
+    @IBOutlet weak var ingredientsTitleLabel: UILabel!
     
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -110,7 +112,7 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(imageScrollView.contentOffset.x/view.frame.width)
+        let pageIndex = round(imageScrollView.contentOffset.x / view.frame.width)
         imagePageControl.currentPage = Int(pageIndex)
     }
     
@@ -135,6 +137,7 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         self.tagsCollectionView.reloadData()
         loadingIndicator.stopAnimating()
     }
+    
     func updateDetailMeal(with detail: Detail) {
         nameMealTextLabel.text = detail.name
         let dequeuedURL = self.mealDetailViewModel.detailServer?.imageURL
@@ -160,7 +163,6 @@ extension MealDetailsViewController: MealDetailViewModelDelegate {
         ingredientSecondLabelText.text = detail.ingredientSecond
         ingredientThirdLabelText.text = detail.ingredientThird
         instructionsLabelText.text = detail.instructions
-        
     }
 
     func saveIDYoutubeURL(url: String) -> String {
