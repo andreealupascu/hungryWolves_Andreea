@@ -84,10 +84,18 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     var isFirstLoad: Bool = true
     var mealID = ""
     var isFavourite: Bool = false
-    
+    var loadingIndicator = UIActivityIndicatorView(style: .large)
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
         imageScrollView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.mealDetailViewModel.delegate = self
         if mealID != "" && isFirstLoad == true {
             self.mealDetailViewModel.detailMeal(idMeal: mealID)
@@ -118,3 +126,49 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
     
 }
 
+extension MealDetailsViewController: MealDetailViewModelDelegate {
+    func detailReloadData() {
+        self.viewDidLoad()
+        loadingIndicator.stopAnimating()
+    }
+    func tagsReloadData() {
+        self.tagsCollectionView.reloadData()
+        loadingIndicator.stopAnimating()
+    }
+    func updateDetailMeal(with detail: Detail) {
+        nameMealTextLabel.text = detail.name
+        let dequeuedURL = self.mealDetailViewModel.detailServer?.imageURL
+        guard let urlString = dequeuedURL else { return }
+        let url = URL(string: urlString)
+        let dequeuedURLYt = self.mealDetailViewModel.detailServer?.youtubeURL
+        guard let urlYtString = dequeuedURLYt else { return }
+        thumbnailFirstImageView.kf.setImage(with: url)
+        let ytUrlString = "https://img.youtube.com/vi/" + saveIDYoutubeURL(url: urlYtString) + "/default.jpg"
+        let ytUrl = URL(string: ytUrlString)
+        thumbnailSecondImageView.kf.setImage(with: ytUrl)
+        thumbnailSecondImageView.clipsToBounds = true
+        thumbnailFirstImageView.layer.cornerRadius = thumbnailFirstImageView.frame.width / 2
+        thumbnailSecondImageView.layer.cornerRadius = thumbnailSecondImageView.frame.width / 2
+        thumbnailFirstImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
+        thumbnailFirstImageView.layer.borderWidth = 2
+        thumbnailSecondImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
+        thumbnailSecondImageView.layer.borderWidth = 2
+        measureFirstLabelText.text = detail.measureFirst
+        measureSecondLabelText.text = detail.measureSecond
+        measureThirdLabelText.text = detail.measureThird
+        ingredientFirstLabelText.text = detail.ingredientFirst
+        ingredientSecondLabelText.text = detail.ingredientSecond
+        ingredientThirdLabelText.text = detail.ingredientThird
+        instructionsLabelText.text = detail.instructions
+        
+    }
+
+    func saveIDYoutubeURL(url: String) -> String {
+        guard let index = url.range(of: "=")?.upperBound else { return "" }
+        let substring = url.suffix(from: index)
+        let string = String(substring)
+        print(string)
+        return string
+    }
+    
+}

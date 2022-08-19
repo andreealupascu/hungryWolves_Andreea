@@ -21,7 +21,7 @@ class SearchViewModel {
     init() {
         self.fetchSearchMeal(searchType: "")
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(reloadHomeScreen(_:)),
+                                               selector: #selector(reloadSearchScreen(_:)),
                                                name: .searchScreen, object: nil)
     }
     
@@ -47,7 +47,7 @@ class SearchViewModel {
         fetchSearchMeal(searchType: searchType)
     }
     
-    @objc func reloadHomeScreen(_ notification: Notification) {
+    @objc func reloadSearchScreen(_ notification: Notification) {
        fetchSearchMeal(searchType: "")
     }
     

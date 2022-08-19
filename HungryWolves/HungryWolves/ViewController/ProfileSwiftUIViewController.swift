@@ -47,7 +47,6 @@ class ProfileSwiftUIViewController: UIViewController{
 
 extension ProfileSwiftUIViewController: ProfileSwiftUIViewModelDelegate {
     func profileReloadData() {
-        print("reload")
         self.viewDidLoad()
     }
 }

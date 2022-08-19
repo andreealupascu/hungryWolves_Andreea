@@ -22,9 +22,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let homeViewModel = HomeViewModel()
     var mealDetailCollectionView = MealDetailsViewController()
     let indexPos = IndexPath(row: 0, section: 0)
+    var loadingIndicator = UIActivityIndicatorView(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         layoutMeal = mealLayoutGenerate()
         if let layout = layoutMeal {
             mealCollectionView.collectionViewLayout = layout
@@ -180,10 +188,12 @@ extension HomeViewController {
 extension HomeViewController: HomeViewModelDelegate {
     func mealReloadData() {
         self.mealCollectionView.reloadData()
+        loadingIndicator.stopAnimating()
     }
     
     func categoryReloadData() {
         self.categoryCollectionView.reloadData()
         categoryCollectionView.selectItem(at: indexPos, animated: false, scrollPosition: [])
+        loadingIndicator.stopAnimating()
     }
 }

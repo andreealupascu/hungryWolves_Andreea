@@ -16,16 +16,12 @@ protocol ProfileSwiftUIViewModelDelegate: AnyObject {
     func profileReloadData()
 }
 
-protocol LoginViewModelDelegate: AnyObject {
-    func sendEmail() -> String
-}
-
 class ProfileViewModel {
     
     var profile = Profile()
+    let defaults = UserDefaults.standard
     weak var delegate: ProfileViewModelDelegate?
     weak var delegateSwiftUI: ProfileSwiftUIViewModelDelegate?
-    weak var delegateEmail: LoginViewModelDelegate?
     
     init() {
         fetchProfile()
@@ -33,8 +29,7 @@ class ProfileViewModel {
     
     private func fetchProfile() {
         self.profile.name = "Andreea Lupașcu"
-        self.profile.email = self.delegateEmail?.sendEmail()
-        print(self.delegateEmail?.sendEmail())
+        self.profile.email = defaults.string(forKey: "Email")
         self.profile.phone = "+40 728 717 259"
         self.delegate?.profileReloadData()
         self.delegateSwiftUI?.profileReloadData()

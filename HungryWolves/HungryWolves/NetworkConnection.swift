@@ -38,10 +38,9 @@ class NetworkConnection {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let noInternetViewHostIdentifier = "noInternetViewHost"
         let offlineInternetVHC = storyBoard.instantiateViewController(withIdentifier: noInternetViewHostIdentifier) as! InternetVHC
+        offlineInternetVHC.modalPresentationStyle = .fullScreen
         let rootViewController = UIApplication.shared.windows.first?.topViewController()
-        print(rootViewController?.classForCoder)
         rootViewController?.present(offlineInternetVHC, animated: true, completion: nil)
-
     }
     
     func dismissOfflineAlert() {
@@ -50,6 +49,7 @@ class NetworkConnection {
         
         NotificationCenter.default.post(name: .homeScreenMeal, object: nil)
         NotificationCenter.default.post(name: .searchScreen, object: nil)
+        NotificationCenter.default.post(name: .mealDetailsScreen, object: nil)
     }
 
      

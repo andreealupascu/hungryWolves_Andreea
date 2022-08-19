@@ -21,14 +21,26 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func backButton(_ sender: UIButton) {
     }
     
-    
     var layoutSearch: UICollectionViewLayout?
     let screenSize: CGRect = UIScreen.main.bounds
     let searchViewModel = SearchViewModel()
     var isSearchNull = true
+    var loadingIndicator = UIActivityIndicatorView(style: .large)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        itemNotFoundView.layer.opacity = 0.0
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
+       // let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+       // view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        itemNotFoundView.layer.opacity = 0.0
         foundMealsLabel.layer.masksToBounds = true
         foundMealsLabel.layer.cornerRadius = 20
         layoutSearch = searchGenerateGridLayout()
@@ -37,8 +49,6 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.searchViewModel.delegate = self
         self.searchViewModel.searchMeal(searchType: searchTextField.text ?? "")
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
     }
 }
 
@@ -91,7 +101,10 @@ extension SearchViewController {
         if self.searchViewModel.mealsSearch.count == 0 {
             foundMealsLabel.text = ""
             itemNotFoundView.layer.opacity = 1.0
+        } else {
+            itemNotFoundView.layer.opacity = 0.0
         }
+        
         return self.searchViewModel.mealsSearch.count
     }
     
@@ -131,5 +144,6 @@ extension SearchViewController {
 extension SearchViewController: SearchViewModelDelegate {
     func searchReloadData() {
         self.searchCollectionView.reloadData()
+        loadingIndicator.stopAnimating()
     }
 }

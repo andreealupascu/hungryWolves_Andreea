@@ -1057,7 +1057,7 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npJ-hi-S8x">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npJ-hi-S8x">
                                         <rect key="frame" x="0.0" y="10" width="414" height="210"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food1" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-Hd-lwg">
@@ -1469,7 +1469,7 @@ Combine soy sauce, ½ cup water, brown sugar, ginger and garlic in a small sauce
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="g3y-KJ-6Ak"/>
+        <segue reference="yBH-JC-fqd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>

@@ -24,6 +24,9 @@ class MealDetailViewModel {
     
     init() {
         self.fetchDetailMeal(idMeal: "")
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadMealScreen(_:)),
+                                               name: .mealDetailsScreen, object: nil)
     }
     
    private func fetchDetailMeal(idMeal: String) {
@@ -57,51 +60,13 @@ class MealDetailViewModel {
     func detailMeal(idMeal: String) {
         fetchDetailMeal(idMeal: idMeal)
     }
-}
-
-extension MealDetailsViewController: MealDetailViewModelDelegate {
-    func detailReloadData() {
-        self.viewDidLoad()
-    }
-    func tagsReloadData() {
-        self.tagsCollectionView.reloadData()
-    }
-    func updateDetailMeal(with detail: Detail) {
-        nameMealTextLabel.text = detail.name
-        let dequeuedURL = self.mealDetailViewModel.detailServer?.imageURL
-        guard let urlString = dequeuedURL else { return }
-        let url = URL(string: urlString)
-        let dequeuedURLYt = self.mealDetailViewModel.detailServer?.youtubeURL
-        guard let urlYtString = dequeuedURLYt else { return }
-        thumbnailFirstImageView.kf.setImage(with: url)
-        let ytUrlString = "https://img.youtube.com/vi/" + saveIDYoutubeURL(url: urlYtString) + "/default.jpg"
-        let ytUrl = URL(string: ytUrlString)
-        thumbnailSecondImageView.kf.setImage(with: ytUrl)
-        thumbnailSecondImageView.clipsToBounds = true
-        thumbnailFirstImageView.layer.cornerRadius = thumbnailFirstImageView.frame.width / 2
-        thumbnailSecondImageView.layer.cornerRadius = thumbnailSecondImageView.frame.width / 2
-        thumbnailFirstImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
-        thumbnailFirstImageView.layer.borderWidth = 2
-        thumbnailSecondImageView.layer.borderColor = UIColor(named: "Border")?.cgColor
-        thumbnailSecondImageView.layer.borderWidth = 2
-        measureFirstLabelText.text = detail.measureFirst
-        measureSecondLabelText.text = detail.measureSecond
-        measureThirdLabelText.text = detail.measureThird
-        ingredientFirstLabelText.text = detail.ingredientFirst
-        ingredientSecondLabelText.text = detail.ingredientSecond
-        ingredientThirdLabelText.text = detail.ingredientThird
-        instructionsLabelText.text = detail.instructions
-        
-    }
-
-    func saveIDYoutubeURL(url: String) -> String {
-        guard let index = url.range(of: "=")?.upperBound else { return "" }
-        let substring = url.suffix(from: index)
-        let string = String(substring)
-        print(string)
-        return string
+    
+    @objc func reloadMealScreen(_ notification: Notification) {
+        fetchDetailMeal(idMeal: "")
     }
     
+    deinit {
+        Foundation.NotificationCenter.default.removeObserver(self,
+                                                             name: .searchScreen, object: nil)
+    }
 }
-
-

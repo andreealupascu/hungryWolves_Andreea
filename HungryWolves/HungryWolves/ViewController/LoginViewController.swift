@@ -14,12 +14,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var errorMessageLabel: UILabel!
     
-    
     @IBAction func emailAction(_ sender: UITextField) {
         if isValidEmailAddr(strToValidate: emailTextField.text ?? "") == true {
             errorMessageLabel.text = ""
             emailBool = true
-            email = emailTextField.text ?? ""
         } else {
             errorMessageLabel.text = "Email invalid. Retry"
         }
@@ -29,7 +27,7 @@ class LoginViewController: UIViewController {
         if emailBool == true {
             if validatePassword(strToValidate: passwordTextField.text ?? "") {
                 loginButton.isEnabled = true
-                email = emailTextField.text ?? ""
+                defaults.set(emailTextField.text, forKey: "Email")
             } else {
                 errorMessageLabel.text = "Password is not strong enough. Retry"
             }
@@ -37,13 +35,12 @@ class LoginViewController: UIViewController {
     }
         
     @IBAction func loginButtonAction(_ sender: Any) {
-        self.profileViewModel.delegateEmail = self
     }
     
-    var email = ""
     var emailBool: Bool = false
     var password = ""
     let profileViewModel = ProfileViewModel()
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,12 +66,5 @@ class LoginViewController: UIViewController {
         } else {
             return false
         }
-    }
-}
-
-extension LoginViewController: LoginViewModelDelegate {
-    func sendEmail() -> String {
-            print(email)
-        return email
     }
 }
