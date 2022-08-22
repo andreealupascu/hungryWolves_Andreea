@@ -24,6 +24,9 @@ class HomeViewModel {
     
     init() {
         self.fetchCategories()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadHomeScreen(_:)),
+                                               name: .homeScreenMeal, object: nil)
     }
     
     private func fetchMeal(categoryType: String) {
@@ -54,14 +57,16 @@ class HomeViewModel {
         
         fetchMeal(categoryType: categoryType)
     }
-}
-
-extension HomeViewController: HomeViewModelDelegate {
-    func mealReloadData() {
-        self.mealCollectionView.reloadData()
+    
+    @objc func reloadHomeScreen(_ notification: Notification) {
+        fetchCategories()
+        fetchMeal(categoryType: "")
     }
     
-    func categoryReloadData() {
-        self.categoryCollectionView.reloadData()
+    deinit {
+        Foundation.NotificationCenter.default.removeObserver(self,
+                                                             name: .homeScreenMeal, object: nil)
     }
 }
+
+

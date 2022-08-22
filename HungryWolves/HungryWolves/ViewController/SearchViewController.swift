@@ -21,14 +21,21 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func backButton(_ sender: UIButton) {
     }
     
-    
     var layoutSearch: UICollectionViewLayout?
     let screenSize: CGRect = UIScreen.main.bounds
     let searchViewModel = SearchViewModel()
     var isSearchNull = true
+    var loadingIndicator = UIActivityIndicatorView(style: .large)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        itemNotFoundView.layer.opacity = 0.0
+        setupLoading()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        itemNotFoundView.layer.opacity = 0.0
         foundMealsLabel.layer.masksToBounds = true
         foundMealsLabel.layer.cornerRadius = 20
         layoutSearch = searchGenerateGridLayout()
@@ -37,6 +44,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.searchViewModel.delegate = self
         self.searchViewModel.searchMeal(searchType: searchTextField.text ?? "")
+    }
+    
+    func setupLoading() {
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
     }
 }
 
@@ -53,13 +67,13 @@ extension SearchViewController {
         
         let item = NSCollectionLayoutItem(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
+                widthDimension: .fractionalWidth(1.1),
                 heightDimension: .fractionalHeight(1)
             )
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: NSCollectionLayoutSize(
-                widthDimension: .absolute(156 * setWidthPercent),
+                widthDimension: .absolute(150 * setWidthPercent),
                 heightDimension: .absolute(212)
             ),
             subitem: item,
@@ -89,18 +103,26 @@ extension SearchViewController {
         if self.searchViewModel.mealsSearch.count == 0 {
             foundMealsLabel.text = ""
             itemNotFoundView.layer.opacity = 1.0
+        } else {
+            itemNotFoundView.layer.opacity = 0.0
         }
         return self.searchViewModel.mealsSearch.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = searchCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as! SearchCollectionViewCell
+        let cell = searchCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchCellOdd", for: indexPath) as! SearchCollectionViewCell
         let meal = self.searchViewModel.mealsSearch[indexPath.item]
         cell.updateSearchCell(with: meal)
         cell.layer.cornerRadius = cell.frame.height / 8
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.gray.cgColor
+        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowOffset = CGSize(width: 0, height: 3)
+        cell.layer.shadowRadius = 2
+        cell.layer.shouldRasterize = true
         itemNotFoundView.layer.opacity = 0.0
         if searchTextField.text == "" {
-            foundMealsLabel.text = ""
+            foundMealsLabel.text = "Try to find something"
         } else {
             foundMealsLabel.text = "Found \(self.searchViewModel.mealsSearch.count) results"
         }
@@ -117,5 +139,12 @@ extension SearchViewController {
             destination.mealID = sender as? String ?? ""
             print(destination.mealID)
         }
+    }
+}
+
+extension SearchViewController: SearchViewModelDelegate {
+    func searchReloadData() {
+        self.searchCollectionView.reloadData()
+        loadingIndicator.stopAnimating()
     }
 }

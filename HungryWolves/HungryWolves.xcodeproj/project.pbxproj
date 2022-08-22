@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C104D5A328ABE25200919E76 /* ExtensionNotification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104D5A228ABE25200919E76 /* ExtensionNotification.Name.swift */; };
+		C104D5A528AC241F00919E76 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104D5A428AC241F00919E76 /* WebViewController.swift */; };
+		C104D5A728AC296B00919E76 /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = C104D5A628AC296B00919E76 /* Slide.xib */; };
+		C111104928AE2FB20099CDDD /* InternetVHC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111104828AE2FB20099CDDD /* InternetVHC.swift */; };
+		C111104B28AE396E0099CDDD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C111104A28AE396E0099CDDD /* LoginViewController.swift */; };
 		C133493628A101170080DD1B /* TagDetailMealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */; };
 		C1428B45289BD89200D03496 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1428B44289BD89200D03496 /* Constants.swift */; };
 		C14FD2A828AACD5400CAA8F8 /* NoInternetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14FD2A728AACD5400CAA8F8 /* NoInternetView.swift */; };
@@ -26,9 +31,9 @@
 		C1B060782896CDEA00621E84 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B060772896CDEA00621E84 /* Category.swift */; };
 		C1B0607D2896E0B600621E84 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */; };
 		C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B060B02896EAE300621E84 /* MealCollectionViewCell.swift */; };
-		C1D3310828AB6D9F00620A7A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3310728AB6D9F00620A7A /* NetworkManager.swift */; };
 		C1D3310A28AB7A5A00620A7A /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3310928AB7A5A00620A7A /* NetworkConnection.swift */; };
-		C1D3310E28AB86FF00620A7A /* InternetConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3310D28AB86FF00620A7A /* InternetConnectionViewController.swift */; };
+		C1D3311328ABA80800620A7A /* ProfileSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3311228ABA80800620A7A /* ProfileSwiftUI.swift */; };
+		C1D3311528ABB70C00620A7A /* ProfileSwiftUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3311428ABB70C00620A7A /* ProfileSwiftUIViewController.swift */; };
 		C1D3EF6B289D116500D3B46E /* MealDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */; };
 		C1D3EF6E289D3E4600D3B46E /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF6D289D3E4600D3B46E /* Detail.swift */; };
 		C1D3EF70289D3E5300D3B46E /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D3EF6F289D3E5300D3B46E /* Details.swift */; };
@@ -49,6 +54,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C104D5A228ABE25200919E76 /* ExtensionNotification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionNotification.Name.swift; sourceTree = "<group>"; };
+		C104D5A428AC241F00919E76 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C104D5A628AC296B00919E76 /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		C111104828AE2FB20099CDDD /* InternetVHC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetVHC.swift; sourceTree = "<group>"; };
+		C111104A28AE396E0099CDDD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C133493528A101170080DD1B /* TagDetailMealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDetailMealCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1428B44289BD89200D03496 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C14FD2A728AACD5400CAA8F8 /* NoInternetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetView.swift; sourceTree = "<group>"; };
@@ -68,9 +78,9 @@
 		C1B060772896CDEA00621E84 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		C1B0607C2896E0B600621E84 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		C1B060B02896EAE300621E84 /* MealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCollectionViewCell.swift; sourceTree = "<group>"; };
-		C1D3310728AB6D9F00620A7A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C1D3310928AB7A5A00620A7A /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		C1D3310D28AB86FF00620A7A /* InternetConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionViewController.swift; sourceTree = "<group>"; };
+		C1D3311228ABA80800620A7A /* ProfileSwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwiftUI.swift; sourceTree = "<group>"; };
+		C1D3311428ABB70C00620A7A /* ProfileSwiftUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSwiftUIViewController.swift; sourceTree = "<group>"; };
 		C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsViewController.swift; sourceTree = "<group>"; };
 		C1D3EF6D289D3E4600D3B46E /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		C1D3EF6F289D3E5300D3B46E /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
@@ -134,13 +144,15 @@
 		C1B0607A2896CFE100621E84 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C111104A28AE396E0099CDDD /* LoginViewController.swift */,
 				C1EFEFB528954EBF00CB0A58 /* HomeViewController.swift */,
 				C1795BEE2897F3EC004EC6EE /* SearchViewController.swift */,
 				C1D3EF6A289D116500D3B46E /* MealDetailsViewController.swift */,
 				C19E328F28A272C100B68CD1 /* ProfileViewController.swift */,
 				C1F8C3C028A393FC00D231A6 /* FavouritesViewController.swift */,
-				C14FD2A728AACD5400CAA8F8 /* NoInternetView.swift */,
-				C1D3310D28AB86FF00620A7A /* InternetConnectionViewController.swift */,
+				C1D3311428ABB70C00620A7A /* ProfileSwiftUIViewController.swift */,
+				C104D5A428AC241F00919E76 /* WebViewController.swift */,
+				C111104828AE2FB20099CDDD /* InternetVHC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -156,6 +168,15 @@
 			);
 			name = ViewModel;
 			path = ViewController/ViewModel;
+			sourceTree = "<group>";
+		};
+		C1D3310F28ABA79500620A7A /* ViewSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				C14FD2A728AACD5400CAA8F8 /* NoInternetView.swift */,
+				C1D3311228ABA80800620A7A /* ProfileSwiftUI.swift */,
+			);
+			path = ViewSwiftUI;
 			sourceTree = "<group>";
 		};
 		C1EFEFA528954EBE00CB0A58 = {
@@ -178,18 +199,20 @@
 			isa = PBXGroup;
 			children = (
 				C1EFEFB128954EBF00CB0A58 /* AppDelegate.swift */,
-				C1D3310928AB7A5A00620A7A /* NetworkConnection.swift */,
-				C1428B44289BD89200D03496 /* Constants.swift */,
 				C1EFEFB328954EBF00CB0A58 /* SceneDelegate.swift */,
+				C1428B44289BD89200D03496 /* Constants.swift */,
 				C18C9F2A289938C200540043 /* ExtensionUIDevice.swift */,
 				C167F724289AACDC00753740 /* ExtensionUIColor.swift */,
-				C1D3310728AB6D9F00620A7A /* NetworkManager.swift */,
+				C104D5A228ABE25200919E76 /* ExtensionNotification.Name.swift */,
+				C1D3310928AB7A5A00620A7A /* NetworkConnection.swift */,
 				C1F8C3C628A3999200D231A6 /* FavouritesFileManager.swift */,
+				C1D3310F28ABA79500620A7A /* ViewSwiftUI */,
 				C1B060792896CFC200621E84 /* Model */,
 				C1B0607A2896CFE100621E84 /* ViewController */,
 				C1795BF2289848A7004EC6EE /* CollectionViewCells */,
 				C1B0607B2896CFEF00621E84 /* ViewModel */,
 				C1EFEFB728954EBF00CB0A58 /* Main.storyboard */,
+				C104D5A628AC296B00919E76 /* Slide.xib */,
 				C1EFEFBC28954EBF00CB0A58 /* LaunchScreen.storyboard */,
 				C1EFEFBA28954EBF00CB0A58 /* Assets.xcassets */,
 				C1EFEFBF28954EBF00CB0A58 /* Info.plist */,
@@ -266,6 +289,7 @@
 				C1EFEFBE28954EBF00CB0A58 /* LaunchScreen.storyboard in Resources */,
 				C1EFEFBB28954EBF00CB0A58 /* Assets.xcassets in Resources */,
 				C1EFEFB928954EBF00CB0A58 /* Main.storyboard in Resources */,
+				C104D5A728AC296B00919E76 /* Slide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,21 +306,25 @@
 				C1D3EF6B289D116500D3B46E /* MealDetailsViewController.swift in Sources */,
 				C18C9F2B289938C200540043 /* ExtensionUIDevice.swift in Sources */,
 				C1F8C3C728A3999200D231A6 /* FavouritesFileManager.swift in Sources */,
+				C111104928AE2FB20099CDDD /* InternetVHC.swift in Sources */,
 				C1F8C3C928A3CA5B00D231A6 /* FavouriteMeal.swift in Sources */,
 				C1D3EF6E289D3E4600D3B46E /* Detail.swift in Sources */,
 				C1795BEF2897F3EC004EC6EE /* SearchViewController.swift in Sources */,
 				C1D3EF70289D3E5300D3B46E /* Details.swift in Sources */,
 				C1795BF12898489C004EC6EE /* SearchCollectionViewCell.swift in Sources */,
+				C104D5A328ABE25200919E76 /* ExtensionNotification.Name.swift in Sources */,
 				C1EFEFB628954EBF00CB0A58 /* HomeViewController.swift in Sources */,
 				C1B060742896BFDD00621E84 /* Meal.swift in Sources */,
 				C167F723289A8D7F00753740 /* SearchViewModel.swift in Sources */,
 				C1B060722896BFDD00621E84 /* Categories.swift in Sources */,
 				C1F8C3C528A3953F00D231A6 /* FavouritesTableViewCell.swift in Sources */,
 				C1EFEFB228954EBF00CB0A58 /* AppDelegate.swift in Sources */,
+				C1D3311328ABA80800620A7A /* ProfileSwiftUI.swift in Sources */,
+				C104D5A528AC241F00919E76 /* WebViewController.swift in Sources */,
 				C1B060B12896EAE300621E84 /* MealCollectionViewCell.swift in Sources */,
 				C14FD2A828AACD5400CAA8F8 /* NoInternetView.swift in Sources */,
 				C19E329428A2742B00B68CD1 /* ProfileViewModel.swift in Sources */,
-				C1D3310828AB6D9F00620A7A /* NetworkManager.swift in Sources */,
+				C111104B28AE396E0099CDDD /* LoginViewController.swift in Sources */,
 				C18C9F292898F22F00540043 /* HomeViewModel.swift in Sources */,
 				C19E329028A272C100B68CD1 /* ProfileViewController.swift in Sources */,
 				C1D3310A28AB7A5A00620A7A /* NetworkConnection.swift in Sources */,
@@ -307,8 +335,8 @@
 				C19E329228A273D400B68CD1 /* Profile.swift in Sources */,
 				C1B0607D2896E0B600621E84 /* CategoryCollectionViewCell.swift in Sources */,
 				C133493628A101170080DD1B /* TagDetailMealCollectionViewCell.swift in Sources */,
+				C1D3311528ABB70C00620A7A /* ProfileSwiftUIViewController.swift in Sources */,
 				C1B060732896BFDD00621E84 /* Protocols.swift in Sources */,
-				C1D3310E28AB86FF00620A7A /* InternetConnectionViewController.swift in Sources */,
 				C1EFEFB428954EBF00CB0A58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -462,6 +490,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -490,6 +519,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

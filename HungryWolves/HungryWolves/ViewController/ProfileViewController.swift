@@ -11,7 +11,6 @@ import WebKit
 class ProfileViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
 
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var favoritesView: UIView!
@@ -58,4 +57,10 @@ class ProfileViewController: UIViewController, WKUIDelegate, WKNavigationDelegat
         emailLabel.text = profile.email
     }
 
+}
+
+extension ProfileViewController: ProfileViewModelDelegate {
+    func profileReloadData() {
+        self.viewDidLoad()
+    }
 }
