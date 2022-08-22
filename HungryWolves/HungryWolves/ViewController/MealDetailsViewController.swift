@@ -90,10 +90,7 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingIndicator.center = view.center
-        view.addSubview(loadingIndicator)
-        loadingIndicator.startAnimating()
-        loadingIndicator.hidesWhenStopped = true
+        setupLoading()
         imageScrollView.delegate = self
     }
     
@@ -124,6 +121,13 @@ class MealDetailsViewController: UIViewController, UICollectionViewDelegate, UIC
         let tagCell = tagsCollectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as! TagDetailMealCollectionViewCell
         tagCell.updateTagsCell(with: self.mealDetailViewModel.tagsArray[indexPath.item])
         return tagCell
+    }
+    
+    func setupLoading() {
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
     }
     
 }

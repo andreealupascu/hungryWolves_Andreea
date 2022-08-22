@@ -31,10 +31,7 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         itemNotFoundView.layer.opacity = 0.0
-        loadingIndicator.center = view.center
-        view.addSubview(loadingIndicator)
-        loadingIndicator.startAnimating()
-        loadingIndicator.hidesWhenStopped = true
+        setupLoading()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +44,13 @@ class SearchViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         self.searchViewModel.delegate = self
         self.searchViewModel.searchMeal(searchType: searchTextField.text ?? "")
+    }
+    
+    func setupLoading() {
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
     }
 }
 
@@ -106,7 +110,7 @@ extension SearchViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = searchCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchCell", for: indexPath) as! SearchCollectionViewCell
+        let cell = searchCollectionView.dequeueReusableCell(withReuseIdentifier: "SearchCellOdd", for: indexPath) as! SearchCollectionViewCell
         let meal = self.searchViewModel.mealsSearch[indexPath.item]
         cell.updateSearchCell(with: meal)
         cell.layer.cornerRadius = cell.frame.height / 8

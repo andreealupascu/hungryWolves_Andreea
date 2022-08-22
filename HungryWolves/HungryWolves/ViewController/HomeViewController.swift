@@ -26,10 +26,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingIndicator.center = view.center
-        view.addSubview(loadingIndicator)
-        loadingIndicator.startAnimating()
-        loadingIndicator.hidesWhenStopped = true
+        setupLoading()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +43,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
         
+    }
+    
+    func setupLoading() {
+        loadingIndicator.center = view.center
+        view.addSubview(loadingIndicator)
+        loadingIndicator.startAnimating()
+        loadingIndicator.hidesWhenStopped = true
     }
 }
 
